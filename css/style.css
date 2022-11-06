@@ -1,0 +1,91 @@
+.main{
+    width: 1280px;
+    height: 720px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main2{
+    width: 1280px;
+    height: 720px;
+    background-color: white;
+    display: flex;
+}
+body{
+    background-color: rgb(37, 72, 37)!important;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.iniciais{
+    height: 200px;
+    width: 200px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(197, 216, 197);
+    font-weight: bold;
+    text-align: center;
+    transition: 500ms;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    color: rgb(22, 22, 22);
+}
+.iniciais img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 90px;
+    width: 90px;
+}
+.iniciais:hover{
+    background-color: rgb(145, 162, 145);
+    color: rgb(22, 22, 22);
+    text-decoration: none;
+}
+.menu{
+    background-color: rgb(214, 214, 214);
+    height: 100%;
+    width: 200px;
+}
+.menu .opt{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menus{
+    width: 1080px; 
+    padding: 20px;
+}
+.menus .nav-link{
+    color: black;
+    transition: 500ms;
+}
+.menus .nav-link.active{
+    font-weight: bold;
+    color: green;
+}
+.menus .nav-link:hover{
+    color: green;
+}
+.menus .nav{
+    justify-content: center;
+}
+.card-img img{
+    width: 100%;
+}
+.card-img{
+    height: 90px;
+}
+.back img{
+    
+    height: 30px;
+}
+.back{text-align: left; width: 100%;}
