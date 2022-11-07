@@ -89,3 +89,15 @@ body{
     height: 30px;
 }
 .back{text-align: left; width: 100%;}
+.modal-dialog{
+    height: 700px;
+    max-width: 900px!important;
+}
+.modal-content{
+    height: 100%;
+    width: 100%;
+}
+.titulo{
+    font-weight: bold;
+    font-size: xx-large;
+}

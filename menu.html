@@ -255,17 +255,125 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Sequência de menus</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Sequência de menus (Aqui fica a cena dos números)</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            ...
+          <div class="modal-body" data-target="1" id="seq-menu1">
+            <div class="container">
+              <div class="row">
+                <div class="col-4">
+                  <img src="./img/Bitoque-a-Montenegro.png" class="w-100" alt="">
+                </div>
+                <div class="col-8">
+                  <div class="titulo">Menu Bitoque</div>
+                  <p>O clássico bife com ovo a cavalo, com várias opções de acompanhamentos que pode personalizar, com direito a bebida e sobremesa.</p>
+                  <button>Personalizar</button>
+                </div>
+                <div class="col-6">
+                  <div class="font-weight-bolder">Informação Nutricional</div>
+                  <table>
+                    <tr>
+                      <td><b>Energia</b></td>
+                      <td><b>2109 kj</b></td>
+                      <td><b>25%</b></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>504 kcal</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><b>Lípidos</b></td>
+                      <td><b>30,02g</b></td>
+                      <td><b>43%</b></td>
+                    </tr>
+                    <tr>
+                      <td><b>Lípidos Saturados</b></td>
+                      <td><b>11,754g</b></td>
+                      <td><b>59%</b></td>
+                    </tr>
+                    <tr>
+                      <td>Lípidos Monoinsaturados</td>
+                      <td>12,559g</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Lípidos Poliinsaturados</td>
+                      <td>1,118g</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><b>Carboidratos</b></td>
+                      <td><b>0g</b></td>
+                      <td><b>0%</b></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-body" data-target="2" id="seq-menu2" style="display: none;">
+            <div class="text-center font-weight-bold">Selecione a sua Bebida</div>
+            <div class="container">
+              <div class="row">
+                <div class="col-2 my-2">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <div class="card-img"><img src="./img/" alt=""></div>
+                      <h5 class="card-title">Coca-Cola</h5>
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 my-2">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <div class="card-img"><img src="./img/" alt=""></div>
+                      <h5 class="card-title">Cerveja</h5>
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 my-2">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <div class="card-img"><img src="./img/" alt=""></div>
+                      <h5 class="card-title">Água</h5>
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 my-2">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <div class="card-img"><img src="./img/" alt=""></div>
+                      <h5 class="card-title">Sem Bebida</h5>
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 my-2">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h5 class="card-title">Title</h5>
+                      <p class="card-text">Content</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-body" data-target="3" id="seq-menu3" style="display: none;">
+            3
+          </div>
+          <div class="modal-body" data-target="4" id="seq-menu4" style="display: none;">
+            4
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+            <button type="button" onclick="avancarMenu()" class="btn btn-primary">Avançar</button>
           </div>
         </div>
       </div>
