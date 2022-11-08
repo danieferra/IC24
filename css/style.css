@@ -143,7 +143,7 @@ tr:nth-child(even) {
     background: gray; 
   }
 
-.modal .btn{
+.modal .btn.btn-primary{
     background-color: rgb(37, 72, 37)!important;
     border: none
 }
