@@ -319,7 +319,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-2 my-2">
-                  <div class="card h-100">
+                  <div class="card h-100" onclick="">
                     <div class="card-body">
                       <div class="card-img"><img src="./img/" alt=""></div>
                       <h5 class="card-title">Coca-Cola</h5>
@@ -366,14 +366,54 @@
             </div>
           </div>
           <div class="modal-body" data-target="3" id="seq-menu3" style="display: none;">
-            3
+            <div class="text-center font-weight-bold">Selecione a sua Sobremesa</div>
+            <div class="container">
+              <div class="row">
+                <div class="col-2 my-2">
+                  <div class="card h-100" onclick="">
+                    <div class="card-body">
+                      <div class="card-img"><img src="./img/" alt=""></div>
+                      <h5 class="card-title">Mousse de Chocolate</h5>
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 my-2">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <div class="card-img"><img src="./img/" alt=""></div>
+                      <h5 class="card-title">Pudim</h5>
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 my-2">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <div class="card-img"><img src="./img/" alt=""></div>
+                      <h5 class="card-title">Baba de Camelo</h5>
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 my-2">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <div class="card-img"><img src="./img/" alt=""></div>
+                      <h5 class="card-title">Sem Sobremesa</h5>
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="modal-body" data-target="4" id="seq-menu4" style="display: none;">
             4
           </div>
           <div class="modal-footer">
-            <button type="button" onclick="retrocederMenu()" class="btn btn-secondary">Retroceder</button>
-            <button type="button" onclick="avancarMenu()" class="btn btn-primary">Avançar</button>
+            <button type="button" onclick="retrocederMenu()" disabled="true" id="btnMenuRetroceder" class="btn btn-secondary">Retroceder</button>
+            <button type="button" onclick="avancarMenu()" id="btnMenuAvancar" class="btn btn-primary">Avançar</button>
           </div>
         </div>
       </div>
