@@ -1,4 +1,9 @@
 function changeMenu(place) {
+    document.getElementsByClassName("nav-link active")[0].classList.remove("active");
+    btn = document.getElementById('nav'+place);
+    texto= btn.innerHTML;
+    document.querySelector('.menus h1').innerHTML=texto;
+    btn.classList.add("active");
     zonas = document.getElementsByClassName("container menut");
     Array.from(zonas).forEach(function(elem) {
         elem.style.display="none";
@@ -119,3 +124,38 @@ for (const bebida of bebidasMenu) {
         document.getElementById("btnMenuAvancar").disabled = false;
       });
     }
+
+function filtros(){
+    filtro = document.getElementsByClassName("form-check-input");
+    classes = "";
+    for(const elem of filtro){
+        if(elem.checked==true){
+
+            classes+="."+elem.value;
+        }
+    }
+    if(classes==""){
+        todos = Array.prototype.slice.call(document.querySelectorAll("#menusCompletos .col-3"));
+        todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#pratos .col-3")));
+        todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#sobremesas .col-3")));
+        for(const elem of todos){
+            elem.style.display="block";
+        }
+    }
+    else{
+        todos = Array.prototype.slice.call(document.querySelectorAll("#menusCompletos .col-3"));
+        todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#pratos .col-3")));
+        todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#sobremesas .col-3")));
+        console.log(todos);
+        for(const elem of todos){
+            elem.style.display="none";
+        }
+        selecionados = Array.prototype.slice.call(document.querySelectorAll("#menusCompletos "+classes));
+        selecionados = selecionados.concat(Array.prototype.slice.call(document.querySelectorAll("#pratos "+classes)));
+        selecionados = selecionados.concat(Array.prototype.slice.call(document.querySelectorAll("#sobremesas "+classes)));
+        for(const elem of selecionados){
+            elem.style.display="block";
+        }
+    }
+   
+}

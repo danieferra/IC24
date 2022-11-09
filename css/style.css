@@ -82,11 +82,11 @@ body{
     width: 100%;
 }
 .card-img{
-    height: 90px;
+    height: 110px;
 }
 .back img{
-    
-    height: 30px;
+    margin-bottom:30px;
+    height: 40  px;
 }
 .back{text-align: left; width: 100%;}
 .modal-dialog{
@@ -146,4 +146,11 @@ tr:nth-child(even) {
 .modal .btn.btn-primary{
     background-color: rgb(37, 72, 37)!important;
     border: none
+}
+.bg1{
+    background-color: rgb(37, 72, 37)!important;
+}
+#user{
+    height: 30px;
+    margin-right: 10px;
 }
