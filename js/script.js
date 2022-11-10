@@ -95,6 +95,20 @@ function pedidoLocalStorage(array){
 
 }
 
+function pedidoAtual(){
+    texto="";
+    if (localStorage.getItem("pedido") === null) {
+        return 0;
+    }
+    else{ 
+        pedido = JSON.parse(localStorage.getItem('pedido'));
+        for (const elem of pedido) {
+            texto+="<div class='card'>"+elem+"</div>";
+        }
+        document.getElementById("pedidoDaAtualidade").innerHTML=texto;
+    }
+}
+
 pratosMenu = document.querySelectorAll('#menusCompletos .card');
 for (const prato of pratosMenu) {
     prato.addEventListener('click', function onClick() {

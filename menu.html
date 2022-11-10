@@ -16,9 +16,9 @@
         <div class="menu py-4">
           <a href="index.html" class="back mb-5"><img src="https://img.icons8.com/ios-glyphs/60/null/circled-left-2.png"/></a>
           <a class="opt"><img id="user" src="https://img.icons8.com/material-rounded/48/null/guest-male.png"/><div><div>Conta</div><div class="small">Pontos: 56</div></div></a>
-          <a class="opt">Menu</a>
+          <a class="opt" href="menu.html">Menu</a>
           <a class="opt" href="pedidosAnteriores.html">Pedidos Anteriores</a>
-          <a href="opt" href="" data-toggle="modal" data-target="#pedidoAtual">Pedido atual</a>
+          <a href="opt" onclick="pedidoAtual()" href="" data-toggle="modal" data-target="#pedidoAtual">Pedido atual</a>
         </div>
         <div class="menus">
           <h1>Menus Completos</h1>
@@ -421,16 +421,12 @@
             </button>
           </div>
           <div class="modal-body" data-target="1" id="seq-menu1">
-          <div>
-            Menu Bitoque: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ETA: 15min &nbsp &nbsp &nbsp <button type="button" disabled="true" id="btnMenuRetroceder" class="btn btn-secondary">Avaliar</button>
+          <div id="pedidoDaAtualidade">
+            <button type="button" disabled="true" id="btnMenuRetroceder" class="btn btn-secondary">Avaliar</button>
           </div>
           <p style="margin-bottom:1cm;"></p>
-          <div>
-            Menu Bacalhau à Brás: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Terminado &nbsp &nbsp &nbsp <button type="button" id="btnMenuRetroceder" class="btn btn-secondary">Avaliar</button>
-          </div>
           </div>
           <div class="modal-footer">
-            <button type="button" onclick="" disabled="true" id="btnMenuRetroceder" class="btn btn-secondary">Pagamento</button>
           </div>
         </div>
       </div>
