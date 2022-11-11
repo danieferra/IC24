@@ -26,6 +26,13 @@ function btnMenu(aberto){
         document.getElementById("btnMenuAvancar").innerHTML="Avançar";
     }
 }
+
+function repetirPedido(){
+    //split string from id pedidoanterior1 and add to a list
+    var pedidoanterior = document.getElementById("pedidoanterior1").innerHTML.split(",");
+    pedidoLocalStorage (pedidoanterior);
+}
+
 function avancarMenu(){
     if(document.getElementById("btnMenuAvancar").innerHTML=="Confirmar Pedido"){
         prato = document.getElementById("menusCompletos").getElementsByClassName("escolhido")[0].getElementsByTagName('h5')[0].innerHTML;
@@ -103,11 +110,14 @@ function pedidoAtual(){
     else{ 
         pedido = JSON.parse(localStorage.getItem('pedido'));
         for (const elem of pedido) {
-            texto+="<div class='card'>"+elem+"</div>";
+            let ns =Math.floor(Math.random()*20 )+1;
+            texto+="<div class='card'>"+elem+"ETA: "+ns.toString()+"</div>";
         }
         document.getElementById("pedidoDaAtualidade").innerHTML=texto;
     }
 }
+
+
 
 pratosMenu = document.querySelectorAll('#menusCompletos .card');
 for (const prato of pratosMenu) {

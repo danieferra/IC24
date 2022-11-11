@@ -19,7 +19,7 @@
           <a class="opt" href="menu.html">Menu</a>
           
           <a class="opt" href="">Pedidos Anteriores</a>
-          <a href="opt" href="" data-toggle="modal" data-target="#pedidoAtual">Pedido atual</a>
+          <a href="opt" onclick="pedidoAtual()" href="" data-toggle="modal" data-target="#pedidoAtual">Pedido atual</a>
         </div>
         <div class="menus">
           <h1>Pedidos Anteriores</h1>
@@ -31,9 +31,9 @@
               <th></th>
             </tr>
             <tr>
-              <td>Menu Bitoque, Sumo de Laranja, Mousse de chocolate</td>
+              <td id="pedidoanterior1">Menu Bitoque, Sumo de Laranja, Mousse de chocolate</td>
               <td>12/03/2022</td>
-              <td><button class="btn mx-2 bg1 text-white">Repetir</button><button class="btn mx-2 bg1 text-white">Avaliar</button><button class="btn mx-2 bg1 text-white">Fatura</button></td>
+              <td><button class="btn mx-2 bg1 text-white" onclick="repetirPedido()">Repetir</button><button class="btn mx-2 bg1 text-white">Avaliar</button><button class="btn mx-2 bg1 text-white">Fatura</button></td>
             </tr>
             <tr>
               <td>Menu Strogonoff, Cerveja, Pudim</td>
@@ -49,7 +49,26 @@
           </table>
           
         </div>
-
+        <div class="modal fade" id="pedidoAtual" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Pedido Atual</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="p-4">
+              <div id="pedidoDaAtualidade">
+                <button type="button" disabled="true" id="btnMenuRetroceder" class="btn btn-secondary">Avaliar</button>
+              </div>
+              <p style="margin-bottom:1cm;"></p>
+              </div>
+              <div class="modal-footer">
+              </div>
+            </div>
+          </div>
+        </div>
         
         
     </div>
