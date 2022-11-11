@@ -10,12 +10,26 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <div class="main text-center p-5">
-        <h1 class="mb-5">Bem-vindo ao SustainableFoody</h1>
-        <div class="d-flex">
-            <a href="menu.html" class="iniciais"><img src="https://img.icons8.com/ios-glyphs/90/null/purchase-order.png"/>Fazer Pedido</a>
-            <a href="reserva.html" class="iniciais"><img src="https://img.icons8.com/ios/100/null/reservation.png"/>Reservar</a>
-    </div>
+    <div class="main text-center">
+        <h1>Reservar Mesa</h1>
+        <hr>
+        <form method="get" action="">
+          <div class="d-flex">
+            <div class="iniciais">
+                <img src="img/calendar-icon.svg" alt=""/>
+                <input type="date" required id="dataReserva" class="m-2" min="">
+            </div>
+            <div class="iniciais">
+                <img src="img/person-add-icon.svg" alt=""/>
+                <input type="number" required id="numPessoas" class="m-2" min="1" max="10">
+            </div>
+          </div>
+            <div><a href="menu.html" type="submit" class="btn text-white mt-4 bg1">Reservar</a></div>
+        </form>
+        
+        
+
+        <div><a href="index.html" class="btn text-white mt-2 bg1">Cancelar</a></div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

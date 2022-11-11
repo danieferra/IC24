@@ -154,3 +154,6 @@ tr:nth-child(even) {
     height: 30px;
     margin-right: 10px;
 }
+.list-group-item label:hover{
+    cursor: pointer;
+}
