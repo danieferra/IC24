@@ -162,6 +162,7 @@ function filtros(){
         todos = Array.prototype.slice.call(document.querySelectorAll("#menusCompletos .col-3"));
         todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#pratos .col-3")));
         todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#sobremesas .col-3")));
+        todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#seq-menu3 .col-2")));
         for(const elem of todos){
             elem.style.display="block";
         }
@@ -170,6 +171,7 @@ function filtros(){
         todos = Array.prototype.slice.call(document.querySelectorAll("#menusCompletos .col-3"));
         todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#pratos .col-3")));
         todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#sobremesas .col-3")));
+        todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#seq-menu3 .col-2")));
         console.log(todos);
         for(const elem of todos){
             elem.style.display="none";
@@ -177,6 +179,7 @@ function filtros(){
         selecionados = Array.prototype.slice.call(document.querySelectorAll("#menusCompletos "+classes));
         selecionados = selecionados.concat(Array.prototype.slice.call(document.querySelectorAll("#pratos "+classes)));
         selecionados = selecionados.concat(Array.prototype.slice.call(document.querySelectorAll("#sobremesas "+classes)));
+        selecionados = selecionados.concat(Array.prototype.slice.call(document.querySelectorAll("#seq-menu3 "+classes)));
         for(const elem of selecionados){
             elem.style.display="block";
         }
