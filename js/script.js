@@ -33,11 +33,14 @@ function repetirPedido(){
     pedidoLocalStorage (pedidoanterior);
 }
 
-function adicionarIndividual(item,target,num){
+function adicionarIndividual(item,target){
     pedido = [item];
     pedidoLocalStorage(pedido);
     document.getElementById(target).style.display="none";
-    document.getElementsByClassName("modal-backdrop")[parseInt(num)].style.display="none";
+    modals=document.getElementsByClassName("modal-backdrop");
+    for(let x =0;x<modals.length;x++){
+        document.getElementsByClassName("modal-backdrop")[x].style.display="none";
+    }
 }
 
 function avancarMenu(){
