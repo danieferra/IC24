@@ -33,11 +33,11 @@ function repetirPedido(){
     pedidoLocalStorage (pedidoanterior);
 }
 
-function adicionarIndividual(item,target){
+function adicionarIndividual(item,target,num){
     pedido = [item];
     pedidoLocalStorage(pedido);
     document.getElementById(target).style.display="none";
-    document.getElementsByClassName("modal-backdrop")[0].style.display="none";
+    document.getElementsByClassName("modal-backdrop")[parseInt(num)].style.display="none";
 }
 
 function avancarMenu(){
