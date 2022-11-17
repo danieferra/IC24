@@ -33,6 +33,13 @@ function repetirPedido(){
     pedidoLocalStorage (pedidoanterior);
 }
 
+function adicionarIndividual(item,target){
+    pedido = [item];
+    pedidoLocalStorage(pedido);
+    document.getElementById(target).style.display="none";
+    document.getElementsByClassName("modal-backdrop")[0].style.display="none";
+}
+
 function avancarMenu(){
     if(document.getElementById("btnMenuAvancar").innerHTML=="Confirmar Pedido"){
         prato = document.getElementById("menusCompletos").getElementsByClassName("escolhido")[0].getElementsByTagName('h5')[0].innerHTML;
