@@ -51,7 +51,7 @@ function avancarMenu(){
         document.getElementsByClassName("modal-backdrop")[0].style.display="none";
     }
     else{
-    modals = document.getElementsByClassName("modal-body");
+    modals = document.getElementsByClassName("modal-body2");
     Array.from(modals).forEach(function(elem) {
         if (elem.style.display!="none"){
             aberto = parseInt(elem.dataset.target)+1;
@@ -69,7 +69,7 @@ function avancarMenu(){
 }
 }
 function retrocederMenu(){
-    modals = document.getElementsByClassName("modal-body");
+    modals = document.getElementsByClassName("modal-body2");
     Array.from(modals).forEach(function(elem) {
         if (elem.style.display!="none"){
             aberto = parseInt(elem.dataset.target)-1;
