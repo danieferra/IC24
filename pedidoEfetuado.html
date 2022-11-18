@@ -11,14 +11,37 @@
   </head>
   <body>
     <div class="main text-center p-5">
-        <h1 class="mb-5">Bem-vindo ao SustainableFoody</h1>
+        <h1 class="mb-5">Pedido efetuado!</h1>
+        <p>Para pagar, consulte o seu pedido.</p>
         <div class="d-flex">
-            <a href="menu.html" class="iniciais"><img src="https://img.icons8.com/ios-glyphs/90/null/purchase-order.png"/>Fazer Pedido</a>
-            <a href="reserva.html" class="iniciais"><img src="https://img.icons8.com/ios/100/null/reservation.png"/>Reservar</a>
+            <button type="button" onclick="pedidoAtual()" data-toggle="modal" data-target="#pedidoAtual"  class="btn mx-2 bg1 text-white">Consultar pedido</button>
+            <button type="button" onclick="location.href='index.html'" class="btn mx-2 bg1 text-white">Concluir</button>
         </div>
     </div>
 
     <button id="clearStorageBtn" onclick="limpaStorage()" class="btn btn-secondary">Clean local storage</button>
+
+    <div class="modal fade" id="pedidoAtual" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Pedido Atual</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="p-4">
+            <div id="pedidoDaAtualidade">
+              <button type="button" disabled="true" id="btnMenuRetroceder" class="btn btn-secondary">Avaliar</button>
+            </div>
+            <p style="margin-bottom:1cm;"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" onclick="location.href='pagamento.html'"  class="btn btn-secondary">Pagamento</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

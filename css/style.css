@@ -13,6 +13,10 @@
     background-color: white;
     display: flex;
 }
+
+#ClearStorageBtn{
+    display: block;
+}
 body{
     background-color: rgb(37, 72, 37)!important;
     height: 100vh;

@@ -59,20 +59,16 @@
                 </button>
               </div>
               <div class="p-4">
-              <div>
-                <button>1 estrela</button>
-              </div>
-              <div>
-                <button>2 estrela</button>
-              </div>
-              <div>
-                <button>3 estrela</button>
-              </div>
-              <div>
-                <button>4 estrela</button>
-              </div>
-              <div>
-                <button>5 estrela</button>
+             
+                <button data-toggle="modal" data-target="#avaliar">1 estrela</button>
+              
+                <button data-toggle="modal" data-target="#avaliar">2 estrelas</button>
+              
+                <button data-toggle="modal" data-target="#avaliar">3 estrelas</button>
+              
+                <button data-toggle="modal" data-target="#avaliar">4 estrelas</button>
+              
+                <button data-toggle="modal" data-target="#avaliar">5 estrelas</button>
               </div>
               <p style="margin-bottom:1cm;"></p>
               </div>
@@ -81,11 +77,34 @@
             </div>
           </div>
         </div>
-        
-        
     </div>
 
+    <!-- ------------------------------------------------------------------------------------------ -->
 
+    <div class="modal fade" id="pedidoAtual" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Pedido Atual</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="p-4">
+          <div id="pedidoDaAtualidade">
+            <button type="button" disabled="true" id="btnMenuRetroceder" class="btn btn-secondary">Avaliar</button>
+          </div>
+          <p style="margin-bottom:1cm;"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" onclick="location.href='pedidoEfetuado.html'"  class="btn btn-secondary">Efetuar pedido</button>
+            <button type="button" onclick="location.href='pagamento.html'"  class="btn btn-secondary">Pagamento</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button id="clearStorageBtn" onclick="limpaStorage()" class="btn btn-secondary">Clean local storage</button>
     <!-- ------------------------------------------------------------------------------------------ -->
 
     <!-- Optional JavaScript -->
