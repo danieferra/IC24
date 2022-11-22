@@ -125,6 +125,13 @@ tr:nth-child(even) {
     overflow-y: scroll;
 }
 
+#reservaNotificacao {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 10%;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 15px;
