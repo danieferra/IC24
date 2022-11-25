@@ -90,6 +90,10 @@ body{
     height: 110px;
     text-align: center;
 }
+.card-body{
+    display: flex;
+    flex-direction: column;
+}
 .back img{
     margin-bottom:30px;
     height: 40  px;
@@ -113,7 +117,11 @@ table {
     width: 100%;
     font-size: 14px;
 }
-  
+.img-individual{
+    max-height: 250px;
+    text-align: center;
+    max-width: 100%;
+}
 td, th {
     border: 1px solid #dddddd;
     text-align: left;
