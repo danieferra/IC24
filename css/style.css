@@ -64,6 +64,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: black;
 }
 .menus{
     width: 1080px; 
@@ -233,4 +234,18 @@ tr:nth-child(even) {
 }
 #sobremesas .card:hover{
     border-color: rgb(29, 46, 29);
+}
+.modal-dialog2{
+    position: absolute!important;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)!important;
+    width: 600px!important;
+    height: 600px!important;
+}
+.modal-dialog{
+    
+}
+input[type=checkbox]{
+    cursor: pointer;
 }
