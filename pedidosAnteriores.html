@@ -12,14 +12,14 @@
   </head>
   <body>
     <div class="main2 text-center">
-      
+      <div onclick="pedidoAtual()" data-toggle="modal" alt="Pedido Atual" title="Pedido Atual" data-target="#pedidoAtual" class="pedidoAtual"><div id="numPedido">2</div><img src="https://img.icons8.com/ios-glyphs/60/000000/purchase-order.png"/></div>
         <div class="menu py-4">
           <a href="index.html" class="back mb-5"><img src="https://img.icons8.com/ios-glyphs/60/null/circled-left-2.png"/></a>
           <a class="opt"><img id="user" src="https://img.icons8.com/material-rounded/48/null/guest-male.png"/><div><div>Conta</div><div class="small">Pontos: 56</div></div></a>
           <a class="opt" href="menu.html">Menu</a>
           
           <a class="opt" href="">Pedidos Anteriores</a>
-          <a href="opt" onclick="pedidoAtual()" href="" data-toggle="modal" data-target="#pedidoAtual">Pedido atual</a>
+          
         </div>
         <div class="menus">
           <h1>Pedidos Anteriores</h1>
@@ -82,21 +82,21 @@
     <!-- ------------------------------------------------------------------------------------------ -->
 
     <div class="modal fade" id="pedidoAtual" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog2 modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header">
+          <div class="modal-header px-4">
             <h5 class="modal-title" id="exampleModalLabel">Pedido Atual</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="p-4">
+          <div class="p-4 h-100">
           <div id="pedidoDaAtualidade">
             <button type="button" disabled="true" id="btnMenuRetroceder" class="btn btn-secondary">Avaliar</button>
           </div>
           <p style="margin-bottom:1cm;"></p>
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer d-block text-center">
             <button type="button" onclick="location.href='pedidoEfetuado.html'"  class="btn btn-secondary">Efetuar pedido</button>
             <button type="button" onclick="location.href='pagamento.html'"  class="btn btn-secondary">Pagamento</button>
           </div>

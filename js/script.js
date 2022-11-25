@@ -33,44 +33,9 @@ function repetirPedido(){
     pedidoLocalStorage (pedidoanterior);
 }
 
-function adicionarIndividual(item,target){
-    pedido = [item];
-    pedidoLocalStorage(pedido);
-    document.getElementById(target).style.display="none";
-    modals=document.getElementsByClassName("modal-backdrop");
-    for(let x =0;x<modals.length;x++){
-        document.getElementsByClassName("modal-backdrop")[x].style.display="none";
-    }
-}
 
-function avancarMenu(){
-    if(document.getElementById("btnMenuAvancar").innerHTML=="Confirmar Pedido"){
-        prato = document.getElementById("menusCompletos").getElementsByClassName("escolhido")[0].getElementsByTagName('h5')[0].innerHTML;
-        bebida = document.getElementById("seq-menu2").getElementsByClassName("escolhido")[0].getElementsByTagName('h5')[0].innerHTML;
-        sobremesa = document.getElementById("seq-menu3").getElementsByClassName("escolhido")[0].getElementsByTagName('h5')[0].innerHTML;
-        pedido = [prato,bebida,sobremesa];
-        pedidoLocalStorage(pedido);
-        document.getElementById("exampleModal").style.display="none";
-        document.getElementsByClassName("modal-backdrop")[0].style.display="none";
-    }
-    else{
-    modals = document.getElementsByClassName("modal-body2");
-    Array.from(modals).forEach(function(elem) {
-        if (elem.style.display!="none"){
-            aberto = parseInt(elem.dataset.target)+1;
-            elem.style.display="none";
-        }
 
-    })
-    document.getElementById("btnMenuAvancar").disabled = true;
-    modal="seq-menu"+aberto.toString();
-    btnMenu(aberto);
-    if(aberto==4){
-        mostrarPedidoMenu();
-    }
-    document.getElementById(modal).style.display="block";
-}
-}
+
 function retrocederMenu(){
     modals = document.getElementsByClassName("modal-body2");
     Array.from(modals).forEach(function(elem) {
@@ -91,11 +56,17 @@ function deselect(array){
     }
 
 }
-function mostrarPedidoMenu(){
-    prato = document.getElementById("menusCompletos").getElementsByClassName("escolhido")[0].getElementsByTagName('h5')[0].innerHTML;
-    bebida = document.getElementById("seq-menu2").getElementsByClassName("escolhido")[0].getElementsByTagName('h5')[0].innerHTML;
-    sobremesa = document.getElementById("seq-menu3").getElementsByClassName("escolhido")[0].getElementsByTagName('h5')[0].innerHTML;
-    document.getElementById("seq-menu4").innerHTML="<div class='text-center font-weight-bold'>Resumo do Pedido:</div><p class='card-title'>"+prato+"</p><p class='card-title'>"+bebida+"</p><p class='card-title'>"+sobremesa+"</p>";
+
+function lengthPedido(){
+    pedido = JSON.parse(localStorage.getItem('pedido'));
+    if(pedido == null){
+        document.getElementsByClassName("pedidoAtual")[0].style.display="none";
+    }
+    else{
+        document.getElementsByClassName("pedidoAtual")[0].style.display="block";
+        document.getElementById("numPedido").innerHTML=pedido.length;
+    }
+    
 }
 
 function pedidoLocalStorage(array){
@@ -109,6 +80,7 @@ function pedidoLocalStorage(array){
         pedido.push(array);
         localStorage.setItem('pedido',JSON.stringify(pedido));
     }
+    lengthPedido();
 
 }
 
@@ -121,7 +93,7 @@ function pedidoAtual(){
         pedido = JSON.parse(localStorage.getItem('pedido'));
         for (const elem of pedido) {
             let ns =Math.floor(Math.random()*20 )+1;
-            texto+="<div class='card'>"+elem+", ETA: "+ns.toString()+"</div>";
+            texto+="<div class='card d-block p-2 mb-2'>"+elem+", <span class='float-right'> ETA: "+ns.toString()+"</span></div>";
         }
         document.getElementById("pedidoDaAtualidade").innerHTML=texto;
     }
@@ -129,35 +101,6 @@ function pedidoAtual(){
 
 
 
-pratosMenu = document.querySelectorAll('#menusCompletos .card');
-for (const prato of pratosMenu) {
-    prato.addEventListener('click', function onClick() {
-      deselect(pratosMenu);
-      prato.style="border: 1px solid green";
-      prato.classList.add("escolhido");
-      document.getElementById("btnMenuAvancar").disabled = false;
-    });
-  }
-
-bebidasMenu = document.querySelectorAll('#seq-menu2 .card');
-for (const bebida of bebidasMenu) {
-    bebida.addEventListener('click', function onClick() {
-      deselect(bebidasMenu);
-      bebida.style="border: 1px solid green";
-      bebida.classList.add("escolhido");
-      document.getElementById("btnMenuAvancar").disabled = false;
-    });
-  }
-
-  sobremesasMenu = document.querySelectorAll('#seq-menu3 .card');
-  for (const sobremsa of sobremesasMenu) {
-    sobremsa.addEventListener('click', function onClick() {
-        deselect(sobremesasMenu);
-        sobremsa.style="border: 1px solid green";
-        sobremsa.classList.add("escolhido");
-        document.getElementById("btnMenuAvancar").disabled = false;
-      });
-    }
 
 function filtros(){
     filtro = document.getElementsByClassName("form-check-input");
@@ -199,4 +142,7 @@ function filtros(){
 
 function limpaStorage() {
     localStorage.removeItem('pedido');
+    location.reload();
 }
+
+window.onload = lengthPedido();

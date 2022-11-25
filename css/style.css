@@ -12,6 +12,7 @@
     height: 720px;
     background-color: white;
     display: flex;
+    position: relative;
 }
 
 #ClearStorageBtn{
@@ -63,6 +64,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: black;
 }
 .menus{
     width: 1080px; 
@@ -83,10 +85,16 @@ body{
     justify-content: center;
 }
 .card-img img{
-    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 .card-img{
     height: 110px;
+    text-align: center;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
 }
 .back img{
     margin-bottom:30px;
@@ -111,7 +119,11 @@ table {
     width: 100%;
     font-size: 14px;
 }
-  
+.img-individual{
+    max-height: 250px;
+    text-align: center;
+    max-width: 100%;
+}
 td, th {
     border: 1px solid #dddddd;
     text-align: left;
@@ -166,5 +178,81 @@ tr:nth-child(even) {
     margin-right: 10px;
 }
 .list-group-item label:hover{
+    cursor: pointer;
+}
+.pedidoAtual{
+    background-color: rgb(37, 72, 37);
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    padding: 10px;
+    transition: 500ms;
+    cursor: pointer;
+}
+.pedidoAtual:hover{
+    background-color: rgb(29, 46, 29);
+}
+.pedidoAtual img{
+    max-height: 50px;
+    filter: invert();
+}
+#numPedido{
+    background-color: rgb(214, 214, 214);
+    position: absolute;
+    padding: 5px;
+    border-radius: 50%;
+    height: 20px;
+    line-height: 1;
+    width: 20px;
+    bottom: 0;
+    right: 0;
+    font-weight: bold;
+    font-size: x-small;
+    transition: 500ms;
+}
+#menusCompletos .card{
+    cursor: pointer;
+    transition: 500ms;
+}
+#menusCompletos .card:hover{
+    border-color: rgb(29, 46, 29);
+}
+
+#pratos .card{
+    cursor: pointer;
+    transition: 500ms;
+}
+#pratos .card:hover{
+    border-color: rgb(29, 46, 29);
+}
+
+#bebidas .card{
+    cursor: pointer;
+    transition: 500ms;
+}
+#bebidas .card:hover{
+    border-color: rgb(29, 46, 29);
+}
+
+#sobremesas .card{
+    cursor: pointer;
+    transition: 500ms;
+}
+#sobremesas .card:hover{
+    border-color: rgb(29, 46, 29);
+}
+.modal-dialog2{
+    position: absolute!important;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)!important;
+    width: 600px!important;
+    height: 600px!important;
+}
+.modal-dialog{
+    
+}
+input[type=checkbox]{
     cursor: pointer;
 }
