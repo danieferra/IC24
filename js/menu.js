@@ -141,12 +141,13 @@ function filtroJS(info){
   return filtros;
 }
 
+lengthPedido();
 
 function mostrarCardapio(){
   //Menus Completos
   var html = "";
   for(let x=0;x<pratos.length;x++){
-    html+="<div class='col-3 my-2 "+filtroJS(pratos[x].filtros)+"'> <div class='card h-100' data-toggle='modal' data-target='#pedirMenu'> <div class='card-body'> <div class='card-img'><img src="+pratos[x].imagem+" title="+pratos[x].nome+" alt="+pratos[x].nome+"></div> <h5 class='card-title'>"+pratos[x].nome+"</h5> <p class='card-text mt-auto'>"+pratos[x].preco+"</p> </div> </div> </div>";
+    html+="<div class='col-3 my-2 "+filtroJS(pratos[x].filtros)+"'> <div class='card h-100' onclick=pedidoMenu("+x+",pratos,'pratos') data-target='#pedirMenu'> <div class='card-body'> <div class='card-img'><img src="+pratos[x].imagem+" title="+pratos[x].nome+" alt="+pratos[x].nome+"></div> <h5 class='card-title'>"+pratos[x].nome+"</h5> <p class='card-text mt-auto'>"+pratos[x].preco+"</p> </div> </div> </div>";
   }
   document.querySelector("#menusCompletos .row").innerHTML = html;
 
@@ -173,6 +174,98 @@ function mostrarCardapio(){
 }
 
 const variableToString = varObj => Object.keys(varObj)[0]
+
+function pedidoMenu(num,cat,nomeCat){
+  modal = document.getElementById("pedirMenu"); 
+  nome = cat[num].nome;
+  console.log(cat);
+  //Titulo
+  document.querySelector("#pedirMenu .modal-body2 .img-individual").src = cat[num].imagem;
+  document.querySelector("#pedirMenu .modal-body2 .titulo").innerHTML = cat[num].nome;
+  document.querySelector("#pedirMenu .modal-body2 .descricaoIndividual").innerHTML = cat[num].descricao;
+  if(cat[num].filtros!=""){
+    document.querySelector("#pedirMenu .modal-body2 .contem").innerHTML ="Contém: "+ cat[num].filtros;
+  }
+  else{
+    document.querySelector("#pedirMenu .modal-body2 .contem").innerHTML ="";
+  }
+  document.querySelector("#pedirMenu .modal-body2 .tabela").innerHTML = cat[num].infoNut;
+
+  //Bebidas
+  var html = "";
+  for(let x=0;x<bebidas.length;x++){
+    html+="<div class='col-2 my-2 "+filtroJS(bebidas[x].filtros)+"'> <div class='card h-100'> <div class='card-body'> <div class='card-img mb-4'><img src="+bebidas[x].imagem+" title="+bebidas[x].nome+" alt="+bebidas[x].nome+"></div> <h5 class='card-title'>"+bebidas[x].nome+"</h5> <p class='card-text mt-auto'>"+bebidas[x].preco+"</p> </div> </div> </div>";
+  }
+  html+="<div class='col-2 my-2'><div class='card h-100'><div class='card-body'><div class='card-img mb-4'><img src='https://img.icons8.com/external-prettycons-lineal-prettycons/98/null/external-forbidden-essentials-prettycons-lineal-prettycons.png'/></div><h5 class='card-title'>Sem Bebida</h5><p class='card-text'></p></div></div></div>";
+  document.querySelector("#seq-menu2 .row").innerHTML = html;
+  
+  //Sobremesas
+  var html = "";
+  for(let x=0;x<sobremesas.length;x++){
+    html+="<div class='col-2 my-2 "+filtroJS(sobremesas[x].filtros)+"'> <div class='card h-100'> <div class='card-body'> <div class='card-img'><img src="+sobremesas[x].imagem+" title="+sobremesas[x].nome+" alt="+sobremesas[x].nome+"></div> <h5 class='card-title'>"+sobremesas[x].nome+"</h5> <p class='card-text mt-auto'>"+sobremesas[x].preco+"</p> </div> </div> </div>";
+  }
+  html+="<div class='col-2 my-2'><div class='card h-100'><div class='card-body'><div class='card-img mb-4'><img src='https://img.icons8.com/external-prettycons-lineal-prettycons/98/null/external-forbidden-essentials-prettycons-lineal-prettycons.png'/></div><h5 class='card-title'>Sem Sobremesa</h5><p class='card-text'></p></div></div></div>";
+  document.querySelector("#seq-menu3 .row").innerHTML = html;
+
+  
+bebidasMenu = document.querySelectorAll('#seq-menu2 .card');
+for (const bebida of bebidasMenu) {
+    bebida.addEventListener('click', function onClick() {
+      deselect(bebidasMenu);
+      bebida.style="border: 1px solid green";
+      bebida.classList.add("escolhido");
+      document.getElementById("btnMenuAvancar").disabled = false;
+    });
+  }
+
+  sobremesasMenu = document.querySelectorAll('#seq-menu3 .card');
+  for (const sobremsa of sobremesasMenu) {
+    sobremsa.addEventListener('click', function onClick() {
+        deselect(sobremesasMenu);
+        sobremsa.style="border: 1px solid green";
+        sobremsa.classList.add("escolhido");
+        document.getElementById("btnMenuAvancar").disabled = false;
+      });
+    }
+
+  
+  $("#pedirMenu").modal();
+}
+
+function avancarMenu(){
+  if(document.getElementById("btnMenuAvancar").innerHTML=="Confirmar Pedido"){
+      prato = document.querySelector("#pedirMenu .modal-body2 .titulo").innerHTML;
+      bebida = document.getElementById("seq-menu2").getElementsByClassName("escolhido")[0].getElementsByTagName('h5')[0].innerHTML;
+      sobremesa = document.getElementById("seq-menu3").getElementsByClassName("escolhido")[0].getElementsByTagName('h5')[0].innerHTML;
+      pedido = [prato,bebida,sobremesa];
+      pedidoLocalStorage(pedido);
+      $("#pedirMenu").modal("hide");
+  }
+  else{
+  modals = document.getElementsByClassName("modal-body2");
+  Array.from(modals).forEach(function(elem) {
+      if (elem.style.display!="none"){
+          aberto = parseInt(elem.dataset.target)+1;
+          elem.style.display="none";
+      }
+
+  })
+  document.getElementById("btnMenuAvancar").disabled = true;
+  modal="seq-menu"+aberto.toString();
+  btnMenu(aberto);
+  if(aberto==4){
+      mostrarPedidoMenu();
+  }
+  document.getElementById(modal).style.display="block";
+}
+}
+
+function mostrarPedidoMenu(){
+  prato = document.querySelector("#pedirMenu .modal-body2 .titulo").innerHTML;
+  bebida = document.getElementById("seq-menu2").getElementsByClassName("escolhido")[0].getElementsByTagName('h5')[0].innerHTML;
+  sobremesa = document.getElementById("seq-menu3").getElementsByClassName("escolhido")[0].getElementsByTagName('h5')[0].innerHTML;
+  document.getElementById("seq-menu4").innerHTML="<div class='text-center font-weight-bold'>Resumo do Pedido:</div><p class='card-title'>"+prato+"</p><p class='card-title'>"+bebida+"</p><p class='card-title'>"+sobremesa+"</p>";
+}
 
 function pedidoInidividual(num,cat,nomeCat){
   modal = document.getElementById("pedirIndividual"); 

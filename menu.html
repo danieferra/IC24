@@ -12,13 +12,13 @@
   </head>
   <body>
     <div class="main2 text-center">
-      
+        <div onclick="pedidoAtual()" href="" data-toggle="modal" data-target="#pedidoAtual" class="pedidoAtual"><div id="numPedido">2</div><img src="https://img.icons8.com/ios-glyphs/60/000000/purchase-order.png"/></div>
         <div class="menu py-4">
           <a href="index.html" class="back mb-5"><img src="https://img.icons8.com/ios-glyphs/60/null/circled-left-2.png"/></a>
           <a class="opt"><img id="user" src="https://img.icons8.com/material-rounded/48/null/guest-male.png"/><div><div>Conta</div><div class="small">Pontos: 56</div></div></a>
           <a class="opt" href="menu.html">Menu</a>
           <a class="opt" href="pedidosAnteriores.html">Pedidos Anteriores</a>
-          <a href="opt" onclick="pedidoAtual()" href="" data-toggle="modal" data-target="#pedidoAtual">Pedido atual</a>
+          <!-- <a href="opt" onclick="pedidoAtual()" href="" data-toggle="modal" data-target="#pedidoAtual">Pedido atual</a> -->
         </div>
         <div class="menus">
           <h1>Menus Completos</h1>
@@ -94,53 +94,17 @@
             <div class="container">
               <div class="row">
                 <div class="col-4">
-                  <img src="./img/Bitoque-a-Montenegro.png" class="w-100" alt="">
+                  <img src="./img/Bitoque-a-Montenegro.png" class="img-individual" alt="">
                 </div>
                 <div class="col-8">
                   <div class="titulo">Menu Bitoque</div>
-                  <p>O clássico bife com ovo a cavalo, com várias opções de acompanhamentos que pode personalizar, com direito a bebida e sobremesa.</p>
+                  <p class="descricaoIndividual">O clássico bife com ovo a cavalo, com várias opções de acompanhamentos que pode personalizar, com direito a bebida e sobremesa.</p>
                   <button class="btn btn-primary">Personalizar</button>
                 </div>
                 <div class="col-6 infoNut">
                   <div class="font-weight-bolder">Informação Nutricional</div>
-                  <p>Sem Glúten</p>
-                  <table>
-                    <tr>
-                      <td><b>Energia</b></td>
-                      <td><b>2109 kj</b></td>
-                      <td><b>25%</b></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>504 kcal</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td><b>Lípidos</b></td>
-                      <td><b>30,02g</b></td>
-                      <td><b>43%</b></td>
-                    </tr>
-                    <tr>
-                      <td><b>Lípidos Saturados</b></td>
-                      <td><b>11,754g</b></td>
-                      <td><b>59%</b></td>
-                    </tr>
-                    <tr>
-                      <td>Lípidos Monoinsaturados</td>
-                      <td>12,559g</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>Lípidos Poliinsaturados</td>
-                      <td>1,118g</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td><b>Carboidratos</b></td>
-                      <td><b>0g</b></td>
-                      <td><b>0%</b></td>
-                    </tr>
-                  </table>
+                  <p class="contem"></p>
+                  <div class="tabela"></div>
                 </div>
               </div>
             </div>
@@ -149,51 +113,7 @@
             <div class="text-center font-weight-bold">Selecione a sua Bebida</div>
             <div class="container">
               <div class="row">
-                <div class="col-2 my-2">
-                  <div class="card h-100" onclick="">
-                    <div class="card-body">
-                      <div class="card-img"><img src="./img/coca-cola-original.jpg" alt=""></div>
-                      <h5 class="card-title">Coca-Cola</h5>
-                      <p class="card-text"></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-2 my-2">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <div class="card-img"><img src="./img/superbock.png" alt=""></div>
-                      <h5 class="card-title">Cerveja</h5>
-                      <p class="card-text"></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-2 my-2">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <div class="card-img"><img src="./img/agua-monchique-51cl_550.png" alt=""></div>
-                      <h5 class="card-title">Água</h5>
-                      <p class="card-text"></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-2 my-2">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <div class="card-img"><img src="./img/depositphotos_4399954-stock-photo-orange-juice.webp" alt=""></div>
-                      <h5 class="card-title">Sumo de Laranja</h5>
-                      <p class="card-text"></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-2 my-2">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <div class="card-img"><img src="https://img.icons8.com/external-prettycons-lineal-prettycons/98/null/external-forbidden-essentials-prettycons-lineal-prettycons.png"/></div>
-                      <h5 class="card-title">Sem Bebida</h5>
-                      <p class="card-text"></p>
-                    </div>
-                  </div>
-                </div>
+
               </div>
             </div>
           </div>
