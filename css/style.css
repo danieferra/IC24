@@ -173,7 +173,7 @@ tr:nth-child(even) {
     cursor: pointer;
 }
 .pedidoAtual{
-    background-color: rgb(37, 72, 37)!important;
+    background-color: rgb(37, 72, 37);
     position: absolute;
     bottom: 20px;
     right: 20px;
@@ -181,6 +181,9 @@ tr:nth-child(even) {
     padding: 10px;
     transition: 500ms;
     cursor: pointer;
+}
+.pedidoAtual:hover{
+    background-color: rgb(29, 46, 29);
 }
 .pedidoAtual img{
     max-height: 50px;
@@ -199,4 +202,35 @@ tr:nth-child(even) {
     font-weight: bold;
     font-size: x-small;
     transition: 500ms;
+}
+#menusCompletos .card{
+    cursor: pointer;
+    transition: 500ms;
+}
+#menusCompletos .card:hover{
+    border-color: rgb(29, 46, 29);
+}
+
+#pratos .card{
+    cursor: pointer;
+    transition: 500ms;
+}
+#pratos .card:hover{
+    border-color: rgb(29, 46, 29);
+}
+
+#bebidas .card{
+    cursor: pointer;
+    transition: 500ms;
+}
+#bebidas .card:hover{
+    border-color: rgb(29, 46, 29);
+}
+
+#sobremesas .card{
+    cursor: pointer;
+    transition: 500ms;
+}
+#sobremesas .card:hover{
+    border-color: rgb(29, 46, 29);
 }
