@@ -256,3 +256,30 @@ tr:nth-child(even) {
 input[type=checkbox]{
     cursor: pointer;
 }
+
+.iconGluten{
+    height: 25px;
+    width: 25px;
+    filter: invert(42%) sepia(93%) saturate(100%) hue-rotate(87deg) brightness(119%) contrast(119%);
+}
+
+.sgluten .iconGluten{
+    display: none;
+}
+
+.iconLactose{
+    height: 25px;
+    width: 25px;
+    filter: invert(42%) sepia(93%) saturate(100%) hue-rotate(87deg) brightness(119%) contrast(119%);
+    margin-left: 5px;
+}
+
+.slactose .iconLactose {
+    display: none;
+}
+
+.iconsFiltros{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}

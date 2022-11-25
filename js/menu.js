@@ -147,28 +147,28 @@ function mostrarCardapio(){
   //Menus Completos
   var html = "";
   for(let x=0;x<pratos.length;x++){
-    html+="<div class='col-3 my-2 "+filtroJS(pratos[x].filtros)+"' title='"+pratos[x].nome+"'> <div class='card h-100' onclick=pedidoMenu("+x+",pratos,'pratos') data-target='#pedirMenu'> <div class='card-body'> <div class='card-img'><img src="+pratos[x].imagem+" title='"+pratos[x].nome+"' alt='"+pratos[x].nome+"'></div> <h5 class='card-title'>"+pratos[x].nome+"</h5> <p class='card-text mt-auto'>"+pratos[x].preco+"</p> </div> </div> </div>";
+    html+="<div class='col-3 my-2 "+filtroJS(pratos[x].filtros)+"' title='"+pratos[x].nome+"'> <div class='card h-100' onclick=pedidoMenu("+x+",pratos,'pratos') data-target='#pedirMenu'> <div class='iconsFiltros'><img class='iconGluten' src='./img/gluten.svg'><img class='iconLactose' src='./img/lactose.svg'></div> <div class='card-body'> <div class='card-img'><img src="+pratos[x].imagem+" title='"+pratos[x].nome+"' alt='"+pratos[x].nome+"'></div> <h5 class='card-title'>"+pratos[x].nome+"</h5> <p class='card-text mt-auto'>"+pratos[x].preco+"</p> </div> </div> </div>";
   }
   document.querySelector("#menusCompletos .row").innerHTML = html;
 
   //Pratos
   var html = "";
   for(let x=0;x<pratos.length;x++){
-    html+="<div class='col-3 my-2 "+filtroJS(pratos[x].filtros)+"' title='"+pratos[x].nome+"'> <div class='card h-100' onclick=pedidoInidividual("+x+",pratos,'pratos') data-target='#pedirIndividual'> <div class='card-body'> <div class='card-img'><img src="+pratos[x].imagem+" title='"+pratos[x].nome+"' alt='"+pratos[x].nome+"'></div> <h5 class='card-title'>"+pratos[x].nome+"</h5> <p class='card-text mt-auto'>"+pratos[x].preco+"</p> </div> </div> </div>";
+    html+="<div class='col-3 my-2 "+filtroJS(pratos[x].filtros)+"' title='"+pratos[x].nome+"'> <div class='card h-100' onclick=pedidoInidividual("+x+",pratos,'pratos') data-target='#pedirIndividual'> <div class='iconsFiltros'><img class='iconGluten' src='./img/gluten.svg'><img class='iconLactose' src='./img/lactose.svg'></div> <div class='card-body'> <div class='card-img'><img src="+pratos[x].imagem+" title='"+pratos[x].nome+"' alt='"+pratos[x].nome+"'></div> <h5 class='card-title'>"+pratos[x].nome+"</h5> <p class='card-text mt-auto'>"+pratos[x].preco+"</p> </div> </div> </div>";
   }
   document.querySelector("#pratos .row").innerHTML = html;
 
   //Bebidas
   var html = "";
   for(let x=0;x<bebidas.length;x++){
-    html+="<div class='col-3 my-2 "+filtroJS(bebidas[x].filtros)+"' title='"+bebidas[x].nome+"'> <div class='card h-100' onclick=pedidoInidividual("+x+",bebidas,'bebidas') data-target='#pedirIndividual'> <div class='card-body'> <div class='card-img'><img src="+bebidas[x].imagem+" title='"+bebidas[x].nome+"' alt='"+bebidas[x].nome+"'></div> <h5 class='card-title'>"+bebidas[x].nome+"</h5> <p class='card-text mt-auto'>"+bebidas[x].preco+"</p> </div> </div> </div>";
+    html+="<div class='col-3 my-2 "+filtroJS(bebidas[x].filtros)+"' title='"+bebidas[x].nome+"'> <div class='card h-100' onclick=pedidoInidividual("+x+",bebidas,'bebidas') data-target='#pedirIndividual'> <div class='iconsFiltros'><img class='iconGluten' src='./img/gluten.svg'><img class='iconLactose' src='./img/lactose.svg'></div> <div class='card-body'> <div class='card-img'><img src="+bebidas[x].imagem+" title='"+bebidas[x].nome+"' alt='"+bebidas[x].nome+"'></div> <h5 class='card-title'>"+bebidas[x].nome+"</h5> <p class='card-text mt-auto'>"+bebidas[x].preco+"</p> </div> </div> </div>";
   }
   document.querySelector("#bebidas .row").innerHTML = html;
 
   //Sobremesas
   var html = "";
   for(let x=0;x<sobremesas.length;x++){
-    html+="<div class='col-3 my-2 "+filtroJS(sobremesas[x].filtros)+"'> <div class='card h-100'  onclick=pedidoInidividual("+x+",sobremesas,'sobremesas') data-target='#pedirIndividual'> <div class='card-body'> <div class='card-img'><img src="+sobremesas[x].imagem+" title='"+sobremesas[x].nome+"' alt='"+sobremesas[x].nome+"'></div> <h5 class='card-title'>"+sobremesas[x].nome+"</h5> <p class='card-text mt-auto'>"+sobremesas[x].preco+"</p> </div> </div> </div>";
+    html+="<div class='col-3 my-2 "+filtroJS(sobremesas[x].filtros)+"'> <div class='card h-100'  onclick=pedidoInidividual("+x+",sobremesas,'sobremesas') data-target='#pedirIndividual'> <div class='iconsFiltros'><img class='iconGluten' src='./img/gluten.svg'><img class='iconLactose' src='./img/lactose.svg'></div> <div class='card-body'> <div class='card-img'><img src="+sobremesas[x].imagem+" title='"+sobremesas[x].nome+"' alt='"+sobremesas[x].nome+"'></div> <h5 class='card-title'>"+sobremesas[x].nome+"</h5> <p class='card-text mt-auto'>"+sobremesas[x].preco+"</p> </div> </div> </div>";
   }
   document.querySelector("#sobremesas .row").innerHTML = html;
 }
