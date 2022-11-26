@@ -69,7 +69,7 @@ bebidas.push({
   imagem: "./img/ucal-33cl-leitechocolate-e1606827620284.png",
   descricao: "Este é para os meninos e meninas...",
   infoNut: "<table> <tbody><tr> <td><b>Energia</b></td> <td><b>2109 kj</b></td> <td><b>25%</b></td> </tr> <tr> <td></td> <td>504 kcal</td> <td></td> </tr> <tr> <td><b>Lípidos</b></td> <td><b>30,02g</b></td> <td><b>43%</b></td> </tr> <tr> <td><b>Lípidos Saturados</b></td> <td><b>11,754g</b></td> <td><b>59%</b></td> </tr> <tr> <td>Lípidos Monoinsaturados</td> <td>12,559g</td> <td></td> </tr> <tr> <td>Lípidos Poliinsaturados</td> <td>1,118g</td> <td></td> </tr> <tr> <td><b>Carboidratos</b></td> <td><b>0g</b></td> <td><b>0%</b></td> </tr> </tbody></table>",
-  filtros: "",
+  filtros: "Lactose",
   preco: "1,20€"
 });
 
@@ -237,7 +237,7 @@ function avancarMenu(){
       prato = document.querySelector("#pedirMenu .modal-body2 .titulo").innerHTML;
       bebida = document.getElementById("seq-menu2").getElementsByClassName("escolhido")[0].getElementsByTagName('h5')[0].innerHTML;
       sobremesa = document.getElementById("seq-menu3").getElementsByClassName("escolhido")[0].getElementsByTagName('h5')[0].innerHTML;
-      pedido = [prato,bebida,sobremesa];
+      pedido = [prato," "+bebida," "+sobremesa];
       pedidoLocalStorage(pedido);
       $("#pedirMenu").modal("hide");
   }

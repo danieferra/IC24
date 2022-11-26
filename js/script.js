@@ -93,7 +93,7 @@ function pedidoAtual(){
         pedido = JSON.parse(localStorage.getItem('pedido'));
         for (const elem of pedido) {
             let ns =Math.floor(Math.random()*20 )+1;
-            texto+="<div class='card d-block p-2 mb-2'>"+elem+", <span class='float-right'> ETA: "+ns.toString()+"</span></div>";
+            texto+="<div class='card d-block p-2 mb-2'>"+elem+" <span class='float-right'> ETA: "+ns.toString()+"</span></div>";
         }
         document.getElementById("pedidoDaAtualidade").innerHTML=texto;
     }
@@ -114,6 +114,7 @@ function filtros(){
     if(classes==""){
         todos = Array.prototype.slice.call(document.querySelectorAll("#menusCompletos .col-3"));
         todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#pratos .col-3")));
+        todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#bebidas .col-3")));
         todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#sobremesas .col-3")));
         todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#seq-menu3 .col-2")));
         for(const elem of todos){
@@ -123,6 +124,7 @@ function filtros(){
     else{
         todos = Array.prototype.slice.call(document.querySelectorAll("#menusCompletos .col-3"));
         todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#pratos .col-3")));
+        todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#bebidas .col-3")));
         todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#sobremesas .col-3")));
         todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#seq-menu3 .col-2")));
         console.log(todos);
@@ -131,6 +133,7 @@ function filtros(){
         }
         selecionados = Array.prototype.slice.call(document.querySelectorAll("#menusCompletos "+classes));
         selecionados = selecionados.concat(Array.prototype.slice.call(document.querySelectorAll("#pratos "+classes)));
+        selecionados = selecionados.concat(Array.prototype.slice.call(document.querySelectorAll("#bebidas "+classes)));
         selecionados = selecionados.concat(Array.prototype.slice.call(document.querySelectorAll("#sobremesas "+classes)));
         selecionados = selecionados.concat(Array.prototype.slice.call(document.querySelectorAll("#seq-menu3 "+classes)));
         for(const elem of selecionados){
