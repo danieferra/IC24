@@ -238,6 +238,7 @@ function mostrarCardapio(){
   }
   document.querySelector("#menusCompletos .row").innerHTML = html;
 
+  pratos.sort((a, b) => a.nome.localeCompare(b.nome));
   //Pratos
   var html = "";
   for(let x=0;x<pratos.length;x++){
