@@ -91,6 +91,7 @@ function pedidoAtual(){
     }
     else{ 
         pedido = JSON.parse(localStorage.getItem('pedido'));
+        pedido.sort();
         total=0;
         for (const elem of pedido) {
             console.log(elem);
@@ -108,9 +109,9 @@ function pedidoAtual(){
 
             total+= parseFloat(item.preco.replace(',','.'));
             let ns =Math.floor(Math.random()*20 )+1;
-            texto+="<div class='card d-block p-2 mb-2'>"+elem+" <span class='float-right'>"+item.preco+"€</span><p class='small mb-0'>ETA: "+ns.toString()+"</p></div>";
+            texto+="<div class='card d-block p-2 mb-2 font-weight-bold'>"+elem+" <span class='float-right font-weight-normal'>"+item.preco+"€</span><p class='small mb-0'>Tempo de espera: "+ns.toString()+"min</p></div>";
             total = Math.ceil(total*100)/100;
-            document.getElementById("total").innerHTML= "Total: "+total+"€";
+            document.getElementById("total").innerHTML= "Total: "+(total.toString()).replace('.',',')+"€";
         }
         document.getElementById("pedidoDaAtualidade").innerHTML=texto;
     }
