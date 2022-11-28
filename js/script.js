@@ -91,9 +91,26 @@ function pedidoAtual(){
     }
     else{ 
         pedido = JSON.parse(localStorage.getItem('pedido'));
+        total=0;
         for (const elem of pedido) {
+            console.log(elem);
+            
+            if(elem.length>1){
+                item = menus.find(element => element.nome == elem[0]);
+            }
+            else{
+                todos = Array.prototype.slice.call(pratos);
+                todos = todos.concat(Array.prototype.slice.call(Array.prototype.slice.call(bebidas)));
+                todos = todos.concat(Array.prototype.slice.call(Array.prototype.slice.call(sobremesas)));
+                item = todos.find(element => element.nome == elem);
+                console.log(todos.find(element => element.nome == elem));
+            }
+
+            total+= parseFloat(item.preco.replace(',','.'));
             let ns =Math.floor(Math.random()*20 )+1;
-            texto+="<div class='card d-block p-2 mb-2'>"+elem+" <span class='float-right'> ETA: "+ns.toString()+"</span></div>";
+            texto+="<div class='card d-block p-2 mb-2'>"+elem+" <span class='float-right'>"+item.preco+"€</span><p class='small mb-0'>ETA: "+ns.toString()+"</p></div>";
+            total = Math.ceil(total*100)/100;
+            document.getElementById("total").innerHTML= "Total: "+total+"€";
         }
         document.getElementById("pedidoDaAtualidade").innerHTML=texto;
     }
