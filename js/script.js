@@ -36,6 +36,7 @@ function btnMenu(aberto){
 function repetirPedido(){
     //split string from id pedidoanterior1 and add to a list
     var pedidoanterior = document.getElementById("pedidoanterior1").innerHTML.split(",");
+    pedidoanterior[0] = pedidoanterior[0].replace("Menu ","");
     pedidoLocalStorage(pedidoanterior);
 }
 
@@ -92,10 +93,13 @@ function pedidoAtual(){
     else{ 
         pedido = JSON.parse(localStorage.getItem('pedido'));
         pedido.sort();
+        const counts = {};
+        
+        pedido.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
+        console.log(counts);
         total=0;
         for (const elem of pedido) {
             console.log(elem);
-            
             if(elem.length>1){
                 if(elem[0].includes("Menu ")){
                     elem[0] = elem[0].replace("Menu ","");
@@ -107,12 +111,17 @@ function pedidoAtual(){
                 todos = todos.concat(Array.prototype.slice.call(Array.prototype.slice.call(bebidas)));
                 todos = todos.concat(Array.prototype.slice.call(Array.prototype.slice.call(sobremesas)));
                 item = todos.find(element => element.nome == elem);
-                console.log(todos.find(element => element.nome == elem));
+                
             }
-
+            console.log(elem);
+            
             total+= parseFloat(item.preco.replace(',','.'));
             let ns =Math.floor(Math.random()*20 )+1;
-            texto+="<div class='card d-block p-2 mb-2 font-weight-bold'>"+elem+" <span class='float-right font-weight-normal'>"+item.preco+"€</span><p class='small mb-0'>Tempo de espera: "+ns.toString()+"min</p></div>";
+            console.log(item.nome);
+            if(!(texto.includes(elem))){
+                texto+="<div class='card d-block p-2 mb-2 font-weight-bold'><div style='float: left;margin-right: 5px;'>"+counts[elem]+"x </div>"+elem+" <span class='float-right font-weight-normal'>"+item.preco+"€</span><p class='small mb-0'>Tempo de espera: "+ns.toString()+"min</p></div>";
+            }
+            
             total = Math.ceil(total*100)/100;
             document.getElementById("total").innerHTML= "Total: "+(total.toString()).replace('.',',')+"€";
         }
