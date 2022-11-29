@@ -36,7 +36,7 @@ function btnMenu(aberto){
 function repetirPedido(){
     //split string from id pedidoanterior1 and add to a list
     var pedidoanterior = document.getElementById("pedidoanterior1").innerHTML.split(",");
-    pedidoLocalStorage (pedidoanterior);
+    pedidoLocalStorage(pedidoanterior);
 }
 
 
@@ -97,6 +97,9 @@ function pedidoAtual(){
             console.log(elem);
             
             if(elem.length>1){
+                if(elem[0].includes("Menu ")){
+                    elem[0] = elem[0].replace("Menu ","");
+                }
                 item = menus.find(element => element.nome == elem[0]);
             }
             else{
@@ -182,6 +185,14 @@ function filtros(){
     
    
    
+}
+
+function avaliar(){
+    document.getElementById("mensagemRapida").style.display="flex";
+    setTimeout( function() { document.getElementById("mensagemRapida").style.opacity="1";}, 500);
+    document.getElementById("mensagemRapida").innerHTML = "<p class='font-weight-bold'>Obrigado pela sua avaliação!</p>";
+    setTimeout( function() { document.getElementById("mensagemRapida").style.opacity="0";}, 2000);
+    setTimeout( function() { document.getElementById("mensagemRapida").style.display="none";}, 2500);
 }
 
 

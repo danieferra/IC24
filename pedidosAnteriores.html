@@ -60,15 +60,15 @@
               </div>
               <div class="p-4">
              
-                <button data-toggle="modal" data-target="#avaliar">1 estrela</button>
+                <button data-toggle="modal" onclick="avaliar()" data-target="#avaliar">1 estrela</button>
               
-                <button data-toggle="modal" data-target="#avaliar">2 estrelas</button>
+                <button data-toggle="modal" onclick="avaliar()" data-target="#avaliar">2 estrelas</button>
               
-                <button data-toggle="modal" data-target="#avaliar">3 estrelas</button>
+                <button data-toggle="modal" onclick="avaliar()" data-target="#avaliar">3 estrelas</button>
               
-                <button data-toggle="modal" data-target="#avaliar">4 estrelas</button>
+                <button data-toggle="modal" onclick="avaliar()" data-target="#avaliar">4 estrelas</button>
               
-                <button data-toggle="modal" data-target="#avaliar">5 estrelas</button>
+                <button data-toggle="modal" onclick="avaliar()" data-target="#avaliar">5 estrelas</button>
               </div>
               <p style="margin-bottom:1cm;"></p>
               </div>
@@ -76,6 +76,7 @@
               </div>
             </div>
           </div>
+          <div id="mensagemRapida"></div>
           <div class="modal fade text-left" id="pedidoAtual" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog2 modal-dialog" role="document">
               <div class="modal-content">
@@ -91,6 +92,7 @@
                 </div>
                 </div>
                 <div class="modal-footer d-block text-center mx-2">
+                  <div id="total" class="mb-2 font-weight-bold"></div>
                   <button type="button" onclick="location.href='pedidoEfetuado.html'"  class="btn btn-secondary">Efetuar pedido</button>
                   <button type="button" onclick="location.href='pagamento.html'"  class="btn btn-primary">Pagamento</button>
                 </div>
@@ -113,5 +115,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="./js/script.js"></script>
+    <script src="./js/menu.js"></script>
   </body>
 </html>

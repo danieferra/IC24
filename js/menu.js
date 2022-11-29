@@ -227,6 +227,8 @@ function filtroJS(info){
   return filtros;
 }
 
+
+
 lengthPedido();
 
 function mostrarCardapio(){
