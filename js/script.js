@@ -134,7 +134,8 @@ function pedidoAtual(){
 
 function filtros(){
     filtro = Array.prototype.slice.call(document.getElementsByClassName("form-check-input"));
-
+    categorias = Array.prototype.slice.call(document.getElementsByClassName("categoria"));
+    cats=[];
     classes = "";
     for(const elem of filtro){
         if(elem.checked==true){
@@ -142,11 +143,33 @@ function filtros(){
             classes+="."+elem.value;
         }
     }
+    for(const elem of categorias){
+        if(elem.checked==true){
+
+            cats.push(elem.value);
+        }
+    }
     
     if(classes==""){
         todos = Array.prototype.slice.call(document.querySelectorAll("#menusCompletos .col-3"));
         todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#pratos .col-3")));
-        todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#bebidas .col-3")));
+        for(const elem of todos){
+            if(cats.length!=0){
+                elem.style.display="none";
+                for(const x of cats){
+                    if(elem.classList.contains(x)){
+                        elem.style.display="block";
+                        /* break; */
+                    }
+               }
+            }
+            else{
+                elem.style.display="block";
+            }
+           
+            
+        }
+        todos = Array.prototype.slice.call(document.querySelectorAll("#bebidas .col-3"));
         todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#sobremesas .col-3")));
         todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#seq-menu3 .col-2")));
         for(const elem of todos){
@@ -165,10 +188,27 @@ function filtros(){
         }
         selecionados = Array.prototype.slice.call(document.querySelectorAll("#menusCompletos "+classes));
         selecionados = selecionados.concat(Array.prototype.slice.call(document.querySelectorAll("#pratos "+classes)));
-        selecionados = selecionados.concat(Array.prototype.slice.call(document.querySelectorAll("#bebidas "+classes)));
+        for(const elem of selecionados){
+            if(cats.length!=0){
+                elem.style.display="none";
+                for(const x of cats){
+                    if(elem.classList.contains(x)){
+                        elem.style.display="block";
+                        /* break; */
+                    }
+               }
+            }
+            else{
+                elem.style.display="block";
+            }
+           
+            
+        }
+        selecionados = Array.prototype.slice.call(document.querySelectorAll("#bebidas "+classes));
         selecionados = selecionados.concat(Array.prototype.slice.call(document.querySelectorAll("#sobremesas "+classes)));
         selecionados = selecionados.concat(Array.prototype.slice.call(document.querySelectorAll("#seq-menu3 "+classes)));
         for(const elem of selecionados){
+            
             elem.style.display="block";
         }
     }
