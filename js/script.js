@@ -93,14 +93,11 @@ function pedidoAtual(){
         pedido = JSON.parse(localStorage.getItem('pedido'));
         for (const elem of pedido) {
             let ns =Math.floor(Math.random()*20 )+1;
-            texto+="<div class='card d-block p-2 mb-2'>"+elem+" <span class='float-right'> ETA: "+ns.toString()+"</span></div>";
+            texto+="<div class='card d-block p-2 mb-2'>"+elem+" <span class='float-right'> ETA: "+ns.toString()+" min</span></div>";
         }
         document.getElementById("pedidoDaAtualidade").innerHTML=texto;
     }
 }
-
-
-
 
 function filtros(){
     filtro = Array.prototype.slice.call(document.getElementsByClassName("form-check-input"));
