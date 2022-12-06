@@ -348,3 +348,31 @@ input[type=checkbox]{
     filter: invert(21%) sepia(32%) saturate(798%) hue-rotate(70deg) brightness(95%) contrast(89%);
     margin-left: 5px;
 }
+.quantidade{
+    width: 30px;
+    text-align: center;
+    height: 30px;
+    border: none;  
+    
+}
+.menos{
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border: none;
+    background-color: #254825;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    color: white;
+}
+.mais{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border: none;
+    background-color: #254825;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    color: white;
+
+}

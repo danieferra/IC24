@@ -401,8 +401,15 @@ function pedidoInidividual(num,cat,nomeCat){
   else{
     document.querySelector("#pedirIndividual .modal-body .contem").innerHTML ="";
   }
+  console.log(cat==bebidas);
+  if(cat==sobremesas||cat==bebidas){
+    document.getElementById("personalizar").style.display='none';
+  }
+  else{
+    document.getElementById("personalizar").style.display='block';
+  }
   document.querySelector("#pedirIndividual .modal-body .tabela").innerHTML = cat[num].infoNut;
-  document.querySelector("#pedirIndividual .modal-footer").innerHTML = "<button type='button' data-dismiss='modal' onclick='adicionarIndividual("+num+","+nomeCat+")' id='btnMenuAvancar' class='btn btn-primary'>Adicionar</button>";
+  document.querySelector("#pedirIndividual .modal-footer").innerHTML = " Quantidade:<input type='number' id='quantity' name='quantity' min='1' max='10' value='1' onKeyDown='return false' class='ml-2'><button type='button' data-dismiss='modal' onclick='adicionarIndividual("+num+","+nomeCat+")' id='btnMenuAvancar' class='btn btn-primary'>Adicionar</button>";
   
   
   $("#pedirIndividual").modal();
@@ -410,8 +417,14 @@ function pedidoInidividual(num,cat,nomeCat){
 }
 
 function adicionarIndividual(num,cat){
-  pedido = [cat[num].nome];
-  pedidoLocalStorage(pedido);
+  x = parseInt(document.getElementById("quantity").value);
+  console.log(x);
+  if(x==null){x=1;}
+  
+  for(let i=0;i<x;i++){
+    pedido = [cat[num].nome];
+    pedidoLocalStorage(pedido);
+  }
   $("#pedirIndividual").modal();
 }
 

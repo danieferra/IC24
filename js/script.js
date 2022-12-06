@@ -72,6 +72,7 @@ function pedidoLocalStorage(array){
     setTimeout( function() { document.getElementById("mensagemRapida").style.opacity="0";}, 2000);
     setTimeout( function() { document.getElementById("mensagemRapida").style.display="none";}, 2500);
     pedido = [];
+    console.log(array);
     if (localStorage.getItem("pedido") === null) {
         pedido.push(array);
         localStorage.setItem('pedido',JSON.stringify(pedido));
@@ -119,7 +120,7 @@ function pedidoAtual(){
             let ns =Math.floor(Math.random()*20 )+1;
             console.log(item.nome);
             if(!(texto.includes(elem))){
-                texto+="<div class='card d-block p-2 mb-2 font-weight-bold'><div style='float: left;margin-right: 5px;'>"+counts[elem]+"x </div>"+elem+" <span class='float-right font-weight-normal'>"+item.preco+"€</span><p class='small mb-0'>Tempo de espera: "+ns.toString()+"min</p></div>";
+                texto+="<div class='card d-block p-2 mb-2 font-weight-bold'><div style='float: left;margin-right: 5px;'><button class='menos' onclick='retirarDoMenu'>-</button><input type='text' min='1' value='"+counts[elem]+"' onKeyDown='return false' class='quantidade'><button class='mais'>+</button> </div>"+elem+" <span class='float-right font-weight-normal'>"+parseFloat(item.preco.replace(',','.'))*counts[elem]+"€</span><p class='small mb-0'>Tempo de espera: "+ns.toString()+"min</p></div>";
             }
             
             total = Math.ceil(total*100)/100;
@@ -129,7 +130,13 @@ function pedidoAtual(){
     }
 }
 
+function retirarDoMenu(item){
+    pedido = JSON.parse(localStorage.getItem('pedido'));
+    item = item.split(",");
+    console.log(pedido);
+    console.log(item);
 
+}
 
 
 function filtros(){
