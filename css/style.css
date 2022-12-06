@@ -1,0 +1,378 @@
+.main{
+    width: 1280px;
+    height: 720px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main2{
+    width: 1280px;
+    height: 720px;
+    background-color: white;
+    display: flex;
+    position: relative;
+}
+
+#ClearStorageBtn{
+    display: block;
+}
+body{
+    background-color: rgb(37, 72, 37)!important;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.iniciais{
+    height: 200px;
+    width: 200px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(197, 216, 197);
+    font-weight: bold;
+    text-align: center;
+    transition: 500ms;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    color: rgb(22, 22, 22);
+}
+.iniciais img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 90px;
+    width: 90px;
+}
+.iniciais:hover{
+    background-color: rgb(145, 162, 145);
+    color: rgb(22, 22, 22);
+    text-decoration: none;
+}
+.menu{
+    background-color: rgb(214, 214, 214);
+    height: 100%;
+    width: 200px;
+}
+.menu .opt{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+.menus{
+    width: 1080px; 
+    padding: 20px;
+}
+.menus .nav-link{
+    color: black;
+    transition: 500ms;
+}
+.menus .nav-link.active{
+    font-weight: bold;
+    color: green;
+}
+.menus .nav-link:hover{
+    color: green;
+}
+.menus .nav{
+    justify-content: center;
+}
+.card-img img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.card-img{
+    height: 110px;
+    text-align: center;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+}
+.back img{
+    margin-bottom:30px;
+    height: 40  px;
+}
+.back{text-align: left; width: 100%;}
+.modal-dialog{
+    height: 700px;
+    max-width: 900px!important;
+}
+.modal-content{
+    height: 100%;
+    width: 100%;
+}
+.titulo{
+    font-weight: bold;
+    font-size: xx-large;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+}
+.img-individual{
+    max-height: 250px;
+    text-align: center;
+    max-width: 100%;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+  
+tr:nth-child(even) {
+    background-color: #dddddd;
+}.col-6.infoNut{
+    height: 265px;
+    overflow-y: auto;
+}
+
+#reservaNotificacao {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 10%;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: gray; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: gray; 
+  }
+
+.modal .btn.btn-primary{
+    background-color: rgb(37, 72, 37)!important;
+    border: none
+}
+.bg1{
+    background-color: rgb(37, 72, 37)!important;
+}
+#user{
+    height: 30px;
+    margin-right: 10px;
+}
+.list-group-item label:hover{
+    cursor: pointer;
+}
+.pedidoAtual{
+    background-color: #254825;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    padding: 10px;
+    transition: 500ms;
+    cursor: pointer;
+    box-shadow: 0 0px 24px 0 rgb(0 0 0 / 10%);
+    z-index: 2;
+    
+}
+
+.pedidoAtual:hover{
+    background-color: rgb(29, 46, 29);
+}
+.pedidoAtual img{
+    max-height: 50px;
+    filter: invert();
+}
+#numPedido{
+    background-color: rgb(214, 214, 214);
+    position: absolute;
+    padding: 5px;
+    border-radius: 50%;
+    height: 20px;
+    line-height: 1;
+    width: 20px;
+    bottom: 0;
+    right: 0;
+    font-weight: bold;
+    font-size: x-small;
+    transition: 500ms;
+}
+#menusCompletos .card{
+    cursor: pointer;
+    transition: 500ms;
+}
+#menusCompletos .card:hover{
+    border-color: rgb(29, 46, 29);
+}
+
+#pratos .card{
+    cursor: pointer;
+    transition: 500ms;
+}
+#pratos .card:hover{
+    border-color: rgb(29, 46, 29);
+}
+
+#bebidas .card{
+    cursor: pointer;
+    transition: 500ms;
+}
+#bebidas .card:hover{
+    border-color: rgb(29, 46, 29);
+}
+
+#sobremesas .card{
+    cursor: pointer;
+    transition: 500ms;
+}
+#sobremesas .card:hover{
+    border-color: rgb(29, 46, 29);
+}
+
+.modal-dialog{
+    
+}
+input[type=checkbox]{
+    cursor: pointer;
+}
+
+.iconGluten{
+    height: 25px;
+    width: 25px;
+    filter: invert(21%) sepia(32%) saturate(798%) hue-rotate(70deg) brightness(95%) contrast(89%);
+}
+
+.sgluten .iconGluten{
+    display: none;
+}
+
+.iconLactose{
+    height: 25px;
+    width: 25px;
+    filter: invert(21%) sepia(32%) saturate(798%) hue-rotate(70deg) brightness(95%) contrast(89%);
+    margin-left: 5px;
+}
+
+.slactose .iconLactose {
+    display: none;
+}
+
+.iconsFiltros{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+#mensagemRapida{
+    position: absolute;
+    left: 50%;
+    font-size: larger;
+    flex-direction: column;
+    top: 50%;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+    background-color: white;
+    width: 400px;
+    height: 200px;
+    box-shadow: 0 0px 30px 0 rgb(0 0 0 / 10%);
+    transition: 500ms;
+    padding: 20px;
+    opacity: 0;
+}
+#mensagemRapida .verified{
+    height: 60px;
+    width: 60px;
+}
+.overflow{
+    overflow-y: auto;
+}
+#pedirMenu .modal-dialog{
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    margin: 0;
+    width: 900px;
+    transform: translate(-50%, -50%);
+}
+.modal#pedirMenu{
+    position: absolute;
+}
+.modal#pedidoAtual{
+    position: absolute;
+}
+#pedidoAtual .modal-dialog2{
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    margin: 0;
+    width: 600px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+
+}
+.container.menut{
+    height: 550px;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+}
+.container.menut::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+.list-group.categorias{
+
+}
+.list-group.categorias img{
+    height: 20px;
+    width: 20px;
+    filter: invert(21%) sepia(32%) saturate(798%) hue-rotate(70deg) brightness(95%) contrast(89%);
+    margin-left: 5px;
+}
+.quantidade{
+    width: 30px;
+    text-align: center;
+    height: 30px;
+    border: none;  
+    
+}
+.menos{
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border: none;
+    background-color: #254825;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    color: white;
+}
+.mais{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border: none;
+    background-color: #254825;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    color: white;
+
+}

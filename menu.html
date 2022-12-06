@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>SustainableFoody</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body class="flex-column">
+    <div class="main2 text-center">
+        <div onclick="pedidoAtual()" data-toggle="modal" alt="Pedido Atual" title="Pedido Atual" data-target="#pedidoAtual" class="pedidoAtual"><div id="numPedido">2</div><img src="https://img.icons8.com/ios-glyphs/60/000000/purchase-order.png"/></div>
+        <div class="menu py-4">
+          <a href="index.html" class="back mb-5"><img src="https://img.icons8.com/ios-glyphs/60/null/circled-left-2.png"/></a>
+          <a class="opt"><img id="user" src="https://img.icons8.com/material-rounded/48/null/guest-male.png"/><div><div>Conta</div><div class="small">Pontos: 56</div></div></a>
+          <a class="opt" href="menu.html">Menu</a>
+          <a class="opt" href="pedidosAnteriores.html">Pedidos Anteriores</a>
+          <!-- <a href="opt" onclick="pedidoAtual()" href="" data-toggle="modal" data-target="#pedidoAtual">Pedido atual</a> -->
+        </div>
+        <div class="menus">
+          <h1>Menus Completos</h1>
+          <hr>
+          <nav class="nav">
+            <li class="nav-item">
+              <a class="nav-link active" id="navmenusCompletos" href="#" onclick="changeMenu('menusCompletos')">Menus Completos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " id="navpratos" href="#" onclick="changeMenu('pratos')" tabindex="-1" aria-disabled="true">Pratos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " id="navbebidas" href="#" onclick="changeMenu('bebidas')" tabindex="-1" aria-disabled="true">Bebidas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " id="navsobremesas" href="#" onclick="changeMenu('sobremesas')" tabindex="-1" aria-disabled="true">Sobremesas</a>
+            </li>
+          </nav>
+          <div class="container">
+            <div class="row">
+              <div class="col-2">
+                Categorias:
+                <ul class="list-group categorias mb-4 text-left">
+                  <li class="list-group-item">
+                    
+                    <label for="carne" class="m-0 d-flex align-items-center"><input id="carne" class="mr-2 categoria"  onchange="filtros()" type="checkbox" value="carne" aria-label="Carne"><div>Carne</div><img src="./img/icons8-barbecue-50.png" alt=""></label>
+                  </li>
+                  <li class="list-group-item">
+                    <label for="peixe" class="m-0 d-flex align-items-center"><input id="peixe" class="mr-2 categoria"  onchange="filtros()" type="checkbox" value="peixe" aria-label="Peixe"><div>Peixe</div><img src="./img/icons8-fish-food-60.png" alt=""></label>
+                  </li>
+                  <li class="list-group-item">
+                    <label for="vegan" class="m-0 d-flex align-items-center"><input id="vegan" class="mr-2 categoria"  onchange="filtros()" type="checkbox" value="vegan" aria-label="Vegan"><div>Vegan</div><img src="./img/icons8-vegan-food-50.png" alt=""></label>
+                  </li>
+                </ul>
+                Filtros:
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <input id="semgluten" class="form-check-input me-1"  onchange="filtros()" type="checkbox" value="sgluten" aria-label="Sem Glúten">
+                    <label for="semgluten" class="m-0">Sem Glúten</label>
+                  </li>
+                  <li class="list-group-item">
+                    <input id="semlactose" class="form-check-input me-1"  onchange="filtros()" type="checkbox" value="slactose" aria-label="Sem Lactose">
+                    <label for="semlactose" class="m-0">Sem Lactose</label>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-10">
+                <div id="menusCompletos" class="container menut">
+                  <div class="row">
+                    
+                  </div>
+                </div>
+                <div id="pratos" class="container menut" style="display: none;">
+                  <div class="row">
+              
+                  </div>
+                </div>
+                <div id="bebidas" class="container menut" style="display: none;">
+                  <div class="row">
+                    
+                  </div>
+                </div>
+                <div id="sobremesas" class="container menut" style="display: none;">
+                  <div class="row">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+        <div id="mensagemRapida"></div>
+        <div class="modal fade text-left" id="pedirMenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sequência de menus (Aqui fica a cena dos números)</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body modal-body2 overflow" data-target="1" id="seq-menu1">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-6">
+                      <img src="./img/Bitoque-a-Montenegro.png" class="img-individual" alt="">
+                    </div>
+                    <div class="col-6">
+                      <div class="titulo">Menu Bitoque</div>
+                      <p class="descricaoIndividual">O clássico bife com ovo a cavalo, com várias opções de acompanhamentos que pode personalizar, com direito a bebida e sobremesa.</p>
+                      <button class="btn btn-primary">Personalizar</button>
+                    </div>
+                    <div class="col-6 infoNut">
+                      <div class="font-weight-bolder">Informação Nutricional</div>
+                      <p class="contem"></p>
+                      <div class="tabela"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-body modal-body2" data-target="2" id="seq-menu2" style="display: none;">
+                <div class="text-center font-weight-bold">Selecione a sua Bebida</div>
+                <div class="container">
+                  <div class="row">
+    
+                  </div>
+                </div>
+              </div>
+              <div class="modal-body modal-body2" data-target="3" id="seq-menu3" style="display: none;">
+                <div class="text-center font-weight-bold">Selecione a sua Sobremesa</div>
+                <div class="container">
+                  <div class="row">
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="modal-body modal-body2" data-target="4" id="seq-menu4" style="display: none;">
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" onclick="retrocederMenu()" disabled="true" id="btnMenuRetroceder" class="btn btn-secondary">Retroceder</button>
+                <button type="button" onclick="avancarMenu()" id="btnMenuAvancar" class="btn btn-primary">Avançar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ------------------------------------------------------------------------------------------ -->
+        <div class="modal fade text-left" id="pedidoAtual" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog2 modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header px-4 mx-2">
+                <h5 class="modal-title" id="exampleModalLabel">Pedido Atual</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="p-4 h-100 m-2 overflow">
+              <div id="pedidoDaAtualidade">
+                <button type="button" disabled="true" id="btnMenuRetroceder" class="btn btn-secondary">Avaliar</button>
+              </div>
+              </div>
+              <div class="modal-footer d-block text-center mx-2">
+                <div id="total" class="mb-2 font-weight-bold"></div>
+                <button type="button" onclick="location.href='pedidoEfetuado.html'"  class="btn btn-secondary">Efetuar pedido</button>
+                <button type="button" onclick="location.href='pagamento.html'"  class="btn btn-primary">Pagamento</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="modal fade text-left" id="pedirIndividual" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Prato Bitoque</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body overflow">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-6 text-center mb-4">
+                      <img src="./img/Bitoque-a-Montenegro.png" class="img-individual" alt="">
+                    </div>
+                    <div class="col-6">
+                      <div class="titulo">Bitoque</div>
+                      <p class="descricaoIndividual">O clássico bife com ovo a cavalo, com várias opções de acompanhamentos que pode personalizar, com direito a bebida e sobremesa.</p>
+                      <button id="personalizar" class="btn btn-primary">Personalizar</button>
+                    </div>
+                    <div class="col-6 infoNut">
+                      <div class="font-weight-bolder">Informação Nutricional</div>
+                      <p class="contem"></p>
+                      <div class="tabela"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    
+
+    <button id="clearStorageBtn" onclick="limpaStorage()" class="btn btn-secondary mt-2">Clean local storage</button>
+
+    <!-- ------------------------------------------------------------------------------------------ -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/menu.js"></script>
+  </body>
+</html>
