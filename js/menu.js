@@ -270,7 +270,7 @@ const variableToString = varObj => Object.keys(varObj)[0]
 function pedidoMenu(num,cat,nomeCat){
   modal = document.getElementById("pedirMenu"); 
   nome = cat[num].nome;
-  console.log(cat);
+  bolasMenu(1);
   //Titulo
   document.querySelector("#pedirMenu .modal-body2 .img-individual").src = cat[num].imagem;
   document.querySelector("#pedirMenu .modal-body2 .titulo").innerHTML = cat[num].nome;
@@ -354,15 +354,25 @@ function avancarMenu(){
       }
 
   })
-  console.log(aberto);
+
   document.getElementById("btnMenuAvancar").disabled = true;
   modal="seq-menu"+aberto.toString();
+  bolasMenu(aberto);
   btnMenu(aberto);
   if(aberto==4){
       mostrarPedidoMenu();
   }
   document.getElementById(modal).style.display="block";
 }
+}
+
+function bolasMenu(num){
+  for(let x=num;x<=4;x++){
+    bolaMenu ="seqmenu"+x.toString();
+    document.getElementById(bolaMenu).style="background-color:white; color:black";
+  }
+  bolaMenu ="seqmenu"+num.toString();
+  document.getElementById(bolaMenu).style="background-color:#254825; color:white";
 }
 
 function retrocederMenu(){
@@ -376,6 +386,7 @@ function retrocederMenu(){
   })
   modal="seq-menu"+aberto.toString();
   btnMenu(aberto);
+  bolasMenu(aberto);
   document.getElementById(modal).style.display="block";
 }
 
@@ -383,13 +394,13 @@ function mostrarPedidoMenu(){
   prato = document.querySelector("#pedirMenu .modal-body2 .titulo").innerHTML;
   bebida = document.getElementById("seq-menu2").getElementsByClassName("escolhido")[0].getElementsByTagName('h5')[0].innerHTML;
   sobremesa = document.getElementById("seq-menu3").getElementsByClassName("escolhido")[0].getElementsByTagName('h5')[0].innerHTML;
-  document.getElementById("seq-menu4").innerHTML="<div class='text-center font-weight-bold'>Resumo do Pedido:</div><p class='card-title'>"+prato+"</p><p class='card-title'>"+bebida+"</p><p class='card-title'>"+sobremesa+"</p>";
+  document.getElementById("seq-menu4").innerHTML="<div class='text-center font-weight-bold mb-4'>Resumo do Pedido:</div><div class='card p-2 mb-2'><p class='card-title mb-0'>"+prato+"</p></div><div class='card p-2 mb-2'><p class='card-title mb-0'>"+bebida+"</p></div><div class='card p-2 mb-2'><p class='card-title mb-0'>"+sobremesa+"</p></div>";
 }
 
 function pedidoInidividual(num,cat,nomeCat){
   modal = document.getElementById("pedirIndividual"); 
   nome = cat[num].nome;
-  console.log(cat);
+
   //Titulo
   document.querySelector("#pedirIndividual .modal-title").innerHTML = cat[num].nome;
   document.querySelector("#pedirIndividual .modal-body .img-individual").src = cat[num].imagem;
@@ -401,24 +412,39 @@ function pedidoInidividual(num,cat,nomeCat){
   else{
     document.querySelector("#pedirIndividual .modal-body .contem").innerHTML ="";
   }
-  console.log(cat==bebidas);
-  if(cat==sobremesas||cat==bebidas){
+
+  /* if(cat==sobremesas||cat==bebidas){
     document.getElementById("personalizar").style.display='none';
   }
   else{
     document.getElementById("personalizar").style.display='block';
-  }
+  } */
   document.querySelector("#pedirIndividual .modal-body .tabela").innerHTML = cat[num].infoNut;
-  document.querySelector("#pedirIndividual .modal-footer").innerHTML = " Quantidade:<input type='number' id='quantity' name='quantity' min='1' max='10' value='1' onKeyDown='return false' class='ml-2'><button type='button' data-dismiss='modal' onclick='adicionarIndividual("+num+","+nomeCat+")' id='btnMenuAvancar' class='btn btn-primary'>Adicionar</button>";
+  document.querySelector("#pedirIndividual .modal-footer").innerHTML = " Quantidade:<button class='menos' onclick='menosQuantity()'>-</button><input type='text' disabled id='quantity' name='quantity' value='1' onKeyDown='return false' class='quantidadeInd'><button class='mais' onclick='maisQuantity()'>+</button><button type='button' data-dismiss='modal' onclick='adicionarIndividual("+num+","+nomeCat+")' id='btnMenuAvancar' class='btn btn-primary'>Adicionar</button>";
   
   
   $("#pedirIndividual").modal();
   
 }
 
+function maisQuantity(){
+  n = parseInt(document.getElementById("quantity").value);
+  n++;
+  document.getElementById("quantity").value=n;
+}
+
+function menosQuantity(){
+  n = parseInt(document.getElementById("quantity").value);
+  n--;
+  if(n>=1){
+    document.getElementById("quantity").value=n;
+  }
+  
+}
+
 function adicionarIndividual(num,cat){
   x = parseInt(document.getElementById("quantity").value);
-  console.log(x);
+
   if(x==null){x=1;}
   
   for(let i=0;i<x;i++){

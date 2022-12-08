@@ -2,7 +2,7 @@ function changeMenu(place) {
     document.getElementsByClassName("nav-link active")[0].classList.remove("active");
     btn = document.getElementById('nav'+place);
     texto= btn.innerHTML;
-    document.querySelector('.menus h1').innerHTML=texto;
+    
     btn.classList.add("active");
     zonas = document.getElementsByClassName("container menut");
     Array.from(zonas).forEach(function(elem) {
@@ -54,7 +54,7 @@ function deselect(array){
 
 function lengthPedido(){
     pedido = JSON.parse(localStorage.getItem('pedido'));
-    if(pedido == null){
+    if(pedido == null||pedido==0){
         document.getElementsByClassName("pedidoAtual")[0].style.display="none";
     }
     else{
@@ -72,7 +72,6 @@ function pedidoLocalStorage(array){
     setTimeout( function() { document.getElementById("mensagemRapida").style.opacity="0";}, 2000);
     setTimeout( function() { document.getElementById("mensagemRapida").style.display="none";}, 2500);
     pedido = [];
-    console.log(array);
     if (localStorage.getItem("pedido") === null) {
         pedido.push(array);
         localStorage.setItem('pedido',JSON.stringify(pedido));
@@ -88,7 +87,10 @@ function pedidoLocalStorage(array){
 
 function pedidoAtual(){
     texto="";
-    if (localStorage.getItem("pedido") === null) {
+    btns=0;
+    if (localStorage.getItem("pedido") == null || localStorage.getItem("pedido") == '[]') {
+        $("#pedidoAtual").modal("hide");
+        lengthPedido();
         return 0;
     }
     else{ 
@@ -97,10 +99,10 @@ function pedidoAtual(){
         const counts = {};
         
         pedido.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
-        console.log(counts);
+
         total=0;
         for (const elem of pedido) {
-            console.log(elem);
+
             if(elem.length>1){
                 if(elem[0].includes("Menu ")){
                     elem[0] = elem[0].replace("Menu ","");
@@ -114,13 +116,15 @@ function pedidoAtual(){
                 item = todos.find(element => element.nome == elem);
                 
             }
-            console.log(elem);
+
             
             total+= parseFloat(item.preco.replace(',','.'));
             let ns =Math.floor(Math.random()*20 )+1;
-            console.log(item.nome);
+
+            
             if(!(texto.includes(elem))){
-                texto+="<div class='card d-block p-2 mb-2 font-weight-bold'><div style='float: left;margin-right: 5px;'><button class='menos' onclick='retirarDoMenu'>-</button><input type='text' min='1' value='"+counts[elem]+"' onKeyDown='return false' class='quantidade'><button class='mais'>+</button> </div>"+elem+" <span class='float-right font-weight-normal'>"+parseFloat(item.preco.replace(',','.'))*counts[elem]+"€</span><p class='small mb-0'>Tempo de espera: "+ns.toString()+"min</p></div>";
+                texto+="<div class='card d-block p-2 mb-2 font-weight-bold'><div style='float: left;margin-right: 5px;'><button class='menos' onclick=retirarDoMenu('btns"+btns+"'); id='btns"+btns+"' data-target='"+elem+"'>-</button><input type='text' min='1' value='"+counts[elem]+"' onKeyDown='return false' class='quantidade' disabled><button class='mais' onclick=adicionarDoMenu('btnsa"+btns+"') id='btnsa"+btns+"' data-target='"+elem+"'>+</button> </div>"+elem+" <span class='float-right font-weight-normal'>"+parseFloat(item.preco.replace(',','.'))*counts[elem]+"€</span><p class='small mb-0'>Tempo de espera: "+ns.toString()+"min</p></div>";
+                btns++;
             }
             
             total = Math.ceil(total*100)/100;
@@ -130,13 +134,41 @@ function pedidoAtual(){
     }
 }
 
-function retirarDoMenu(item){
-    pedido = JSON.parse(localStorage.getItem('pedido'));
-    item = item.split(",");
-    console.log(pedido);
-    console.log(item);
-
+function retirarDoMenu(valor){
+    let x = document.getElementById(valor).dataset.target;
+    x = x.split(",");
+    removeItem(x);
+    pedidoAtual();
 }
+
+function adicionarDoMenu(valor){
+    let x = document.getElementById(valor).dataset.target;
+    x = x.split(",");
+    addItem(x);
+    pedidoAtual();
+}
+
+function removeItem(item){
+    pedido = JSON.parse(localStorage.getItem('pedido'));
+
+    for(let i =0;i<pedido.length;i++){
+        console.log(item);
+        console.log(pedido[i]);
+        if(pedido[i][0]===item[0]){
+            pedido.splice(i, 1);
+            break;
+        }
+        
+    }
+    localStorage.setItem('pedido',JSON.stringify(pedido));
+}
+
+function addItem(item){
+    pedido = JSON.parse(localStorage.getItem('pedido'));
+    pedido.push(item);
+    localStorage.setItem('pedido',JSON.stringify(pedido));
+}
+
 
 
 function filtros(){
@@ -249,9 +281,22 @@ function avaliar(){
     document.getElementById("mensagemRapida").innerHTML = "<p class='font-weight-bold'>Obrigado pela sua avaliação!</p>";
     setTimeout( function() { document.getElementById("mensagemRapida").style.opacity="0";}, 2000);
     setTimeout( function() { document.getElementById("mensagemRapida").style.display="none";}, 2500);
+    $('#avaliar').modal("hide");
 }
 
-
+function starHover(estrela){
+    n = parseInt(estrela.id.split("star")[1]);
+    for(let x=1;x<=n;x++){
+        classe = "star"+x.toString();
+        document.getElementById(classe).style="color: orange";
+    }
+}
+function starLeftHover(estrela){
+    for(let x=1;x<=5;x++){
+        classe = "star"+x.toString();
+        document.getElementById(classe).style="color: #212529";
+    }
+}
 
 function limpaStorage() {
     localStorage.removeItem('pedido');
