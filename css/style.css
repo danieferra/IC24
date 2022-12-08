@@ -482,3 +482,7 @@ input[type=checkbox]{
     color: green;
     font-weight: bold;
 }
+.remove{
+    text-decoration: underline;
+    cursor: pointer;
+}
