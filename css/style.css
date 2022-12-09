@@ -332,6 +332,7 @@ input[type=checkbox]{
     transition: 500ms;
     padding: 20px;
     opacity: 0;
+    z-index: 1500;
 }
 #mensagemRapida .verified{
     height: 60px;
@@ -479,6 +480,12 @@ input[type=checkbox]{
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+}
+#seq-menu4 .card{
+    cursor: default;
+}
+#seq-menu4 .card:hover{
+    border: 1px solid rgba(0,0,0,.125);
 }
 .sequenciaMenu{
     width: 35px;
