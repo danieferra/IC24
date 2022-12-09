@@ -73,7 +73,7 @@ function pedidoLocalStorage(array){
     
     document.getElementById("mensagemRapida").style.display="flex";
     setTimeout( function() { document.getElementById("mensagemRapida").style.opacity="1";}, 500);
-    document.getElementById("mensagemRapida").innerHTML = "<p class='font-weight-bold'>Item adicionado com sucesso</p><img class='verified' src='./img/icons8-checkmark.gif' alt=''>";
+    document.getElementById("mensagemRapida").innerHTML = "<p class='font-weight-bold'>Item adicionado com sucesso</p><img class='verified' src='./img/icons8-checkmark.gif' alt='' loop=infinite>";
     setTimeout( function() { document.getElementById("mensagemRapida").style.opacity="0";}, 2000);
     setTimeout( function() { document.getElementById("mensagemRapida").style.display="none";}, 2500);
     pedido = [];
