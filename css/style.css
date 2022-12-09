@@ -537,3 +537,12 @@ input[type=checkbox]{
     height: 60px;
     width: 60px;
 }
+
+.highlight {
+    border: 2px solid rgb(227, 108, 108);
+}
+
+#numeroNotificacao {
+    color: rgb(195, 0, 0);
+    font-size: small;
+}
