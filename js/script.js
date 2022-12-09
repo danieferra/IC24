@@ -121,7 +121,7 @@ function pedidoAtual(){
             total+= parseFloat(item.preco.replace(',','.'));
             let ns =Math.floor(Math.random()*20 )+1;
             
-            if(!(texto.includes(elem))){
+            if(!(texto.includes(">"+elem+"<"))){
                 texto+="<div class='card d-block p-2 mb-2 font-weight-bold'><div style='float: left;margin-right: 5px;'><button class='menos' onclick=retirarDoMenu('btns"+btns+"',1); id='btns"+btns+"' data-target='"+elem+"'>-</button><input type='text' min='1' value='"+counts[elem]+"' onKeyDown='return false' class='quantidade' disabled><button class='mais' onclick=adicionarDoMenu('btnsa"+btns+"',1) id='btnsa"+btns+"' data-target='"+elem+"'>+</button> </div><div class='d-flex w-auto justify-content-between'>"+elem+"<span class=' text-right d-flex flex-column font-weight-normal'>"+parseFloat(item.preco.replace(',','.'))*counts[elem]+"€<span class='remove' onclick=retirarDoMenu('btns"+btns+"',"+counts[elem]+")>Remover</span></span></div><p class='small mb-0'>Tempo de espera: "+ns.toString()+"min</p></div>";
                 btns++;
             }
