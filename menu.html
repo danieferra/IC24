@@ -13,57 +13,81 @@
   <body class="flex-column">
     <div class="main2 text-center">
         <div onclick="pedidoAtual()" data-toggle="modal" alt="Pedido Atual" title="Pedido Atual" data-target="#pedidoAtual" class="pedidoAtual"><div id="numPedido">2</div><img src="https://img.icons8.com/ios-glyphs/60/000000/purchase-order.png"/></div>
-        <div class="menu py-4">
-          <a href="index.html" class="back mb-5"><img src="https://img.icons8.com/ios-glyphs/60/null/circled-left-2.png"/></a>
-          <a class="opt"><img id="user" src="https://img.icons8.com/material-rounded/48/null/guest-male.png"/><div><div>Conta</div><div class="small">Pontos: 56</div></div></a>
-          <a class="opt" href="menu.html">Menu</a>
-          <a class="opt" href="pedidosAnteriores.html">Pedidos Anteriores</a>
-          <!-- <a href="opt" onclick="pedidoAtual()" href="" data-toggle="modal" data-target="#pedidoAtual">Pedido atual</a> -->
-        </div>
         <div class="menus">
-          <h1>Menus Completos</h1>
-          <hr>
-          <nav class="nav">
-            <li class="nav-item">
-              <a class="nav-link active" id="navmenusCompletos" href="#" onclick="changeMenu('menusCompletos')">Menus Completos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " id="navpratos" href="#" onclick="changeMenu('pratos')" tabindex="-1" aria-disabled="true">Pratos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " id="navbebidas" href="#" onclick="changeMenu('bebidas')" tabindex="-1" aria-disabled="true">Bebidas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " id="navsobremesas" href="#" onclick="changeMenu('sobremesas')" tabindex="-1" aria-disabled="true">Sobremesas</a>
-            </li>
-          </nav>
-          <div class="container">
+          <div class="menuTop p-4">
+            <div class="d-flex float-left position-absolute">
+            <div class="iconsMenu">
+              <a href="index.html" class="back"><img src="https://img.icons8.com/ios-glyphs/60/null/circled-left-2.png"/></a>
+            </div>
+              <div class="iconsMenu p-2">
+                <a href="menu.html" class="menuNav active">Menu</a>
+              </div>
+              <div class="iconsMenu p-2">
+                <a href="pedidosAnteriores.html" class="menuNav">Pedidos<br>Anteriores</a>
+              </div>
+            </div>
+            
+            
+            
+           
+            <h1 class="mb-0">Menu</h1>
+          
+          </div>
+          
+          <hr class="mt-0">
+          <div class="row">
+            <!-- <div class="col-2"></div> -->
+            <div class="col-12">
+              <nav class="nav">
+                <li class="nav-item">
+                  <a class="nav-link active" id="navmenusCompletos" href="#" onclick="changeMenu('menusCompletos')">Menus Completos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " id="navpratos" href="#" onclick="changeMenu('pratos')" tabindex="-1" aria-disabled="true">Pratos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " id="navbebidas" href="#" onclick="changeMenu('bebidas')" tabindex="-1" aria-disabled="true">Bebidas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " id="navsobremesas" href="#" onclick="changeMenu('sobremesas')" tabindex="-1" aria-disabled="true">Sobremesas</a>
+                </li>
+              </nav>
+            </div>
+          </div>
+          
+          <div class="px-4">
             <div class="row">
               <div class="col-2">
-                Categorias:
-                <ul class="list-group categorias mb-4 text-left">
-                  <li class="list-group-item">
-                    
-                    <label for="carne" class="m-0 d-flex align-items-center"><input id="carne" class="mr-2 categoria"  onchange="filtros()" type="checkbox" value="carne" aria-label="Carne"><div>Carne</div><img src="./img/icons8-barbecue-50.png" alt=""></label>
-                  </li>
-                  <li class="list-group-item">
-                    <label for="peixe" class="m-0 d-flex align-items-center"><input id="peixe" class="mr-2 categoria"  onchange="filtros()" type="checkbox" value="peixe" aria-label="Peixe"><div>Peixe</div><img src="./img/icons8-fish-food-60.png" alt=""></label>
-                  </li>
-                  <li class="list-group-item">
-                    <label for="vegan" class="m-0 d-flex align-items-center"><input id="vegan" class="mr-2 categoria"  onchange="filtros()" type="checkbox" value="vegan" aria-label="Vegan"><div>Vegan</div><img src="./img/icons8-vegan-food-50.png" alt=""></label>
-                  </li>
-                </ul>
-                Filtros:
-                <ul class="list-group">
-                  <li class="list-group-item">
-                    <input id="semgluten" class="form-check-input me-1"  onchange="filtros()" type="checkbox" value="sgluten" aria-label="Sem Glúten">
-                    <label for="semgluten" class="m-0">Sem Glúten</label>
-                  </li>
-                  <li class="list-group-item">
-                    <input id="semlactose" class="form-check-input me-1"  onchange="filtros()" type="checkbox" value="slactose" aria-label="Sem Lactose">
-                    <label for="semlactose" class="m-0">Sem Lactose</label>
-                  </li>
-                </ul>
+                <div id="catsGorias">
+                    Categorias:
+                  <ul class="list-group categorias mb-4 text-left">
+                    <li class="list-group-item">
+                      
+                      <label for="carne" class="m-0 d-flex align-items-center"><input id="carne" class="mr-2 categoria"  onchange="filtros()" type="checkbox" value="carne" aria-label="Carne"><div>Carne</div><img src="./img/icons8-barbecue-50.png" alt=""></label>
+                    </li>
+                    <li class="list-group-item">
+                      <label for="peixe" class="m-0 d-flex align-items-center"><input id="peixe" class="mr-2 categoria"  onchange="filtros()" type="checkbox" value="peixe" aria-label="Peixe"><div>Peixe</div><img src="./img/icons8-fish-food-60.png" alt=""></label>
+                    </li>
+                    <li class="list-group-item">
+                      <label for="vegan" class="m-0 d-flex align-items-center"><input id="vegan" class="mr-2 categoria"  onchange="filtros()" type="checkbox" value="vegan" aria-label="Vegan"><div>Vegan</div><img src="./img/icons8-vegan-food-50.png" alt=""></label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="filtros0">
+                  Filtros:
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      <input id="semgluten" class="form-check-input me-1"  onchange="filtros()" type="checkbox" value="sgluten" aria-label="Sem Glúten">
+                      <label for="semgluten" class="m-0">Sem Glúten</label>
+                    </li>
+                    <li class="list-group-item">
+                      <input id="semlactose" class="form-check-input me-1"  onchange="filtros()" type="checkbox" value="slactose" aria-label="Sem Lactose">
+                      <label for="semlactose" class="m-0">Sem Lactose</label>
+                    </li>
+                  </ul>
+                </div>
+                
+                
               </div>
               <div class="col-10">
                 <div id="menusCompletos" class="container menut">
@@ -97,7 +121,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Sequência de menus (Aqui fica a cena dos números)</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Pedido Menu <div class="d-inline-flex"><div class="sequenciaMenu" id="seqmenu1">1</div><div class="sequenciaMenu" id="seqmenu2">2</div><div class="sequenciaMenu" id="seqmenu3">3</div><div class="sequenciaMenu" id="seqmenu4">4</div></div></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -111,7 +135,7 @@
                     <div class="col-6">
                       <div class="titulo">Menu Bitoque</div>
                       <p class="descricaoIndividual">O clássico bife com ovo a cavalo, com várias opções de acompanhamentos que pode personalizar, com direito a bebida e sobremesa.</p>
-                      <button class="btn btn-primary">Personalizar</button>
+                      <!-- <button class="btn btn-primary">Personalizar</button> -->
                     </div>
                     <div class="col-6 infoNut">
                       <div class="font-weight-bolder">Informação Nutricional</div>
@@ -161,9 +185,9 @@
               <div id="pedidoDaAtualidade">
                 <button type="button" disabled="true" id="btnMenuRetroceder" class="btn btn-secondary">Avaliar</button>
               </div>
-              <p style="margin-bottom:1cm;"></p>
               </div>
               <div class="modal-footer d-block text-center mx-2">
+                <div id="total" class="mb-2 font-weight-bold"></div>
                 <button type="button" onclick="location.href='pedidoEfetuado.html'"  class="btn btn-secondary">Efetuar pedido</button>
                 <button type="button" onclick="location.href='pagamento.html'"  class="btn btn-primary">Pagamento</button>
               </div>
@@ -189,7 +213,7 @@
                     <div class="col-6">
                       <div class="titulo">Bitoque</div>
                       <p class="descricaoIndividual">O clássico bife com ovo a cavalo, com várias opções de acompanhamentos que pode personalizar, com direito a bebida e sobremesa.</p>
-                      <button class="btn btn-primary">Personalizar</button>
+                      <!-- <button id="personalizar" class="btn btn-primary">Personalizar</button> -->
                     </div>
                     <div class="col-6 infoNut">
                       <div class="font-weight-bolder">Informação Nutricional</div>

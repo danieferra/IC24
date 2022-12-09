@@ -9,66 +9,75 @@
     
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body class="flex-column ">
     <div class="main2 text-center">
       <div onclick="pedidoAtual()" data-toggle="modal" alt="Pedido Atual" title="Pedido Atual" data-target="#pedidoAtual" class="pedidoAtual"><div id="numPedido">2</div><img src="https://img.icons8.com/ios-glyphs/60/000000/purchase-order.png"/></div>
-        <div class="menu py-4">
-          <a href="index.html" class="back mb-5"><img src="https://img.icons8.com/ios-glyphs/60/null/circled-left-2.png"/></a>
-          <a class="opt"><img id="user" src="https://img.icons8.com/material-rounded/48/null/guest-male.png"/><div><div>Conta</div><div class="small">Pontos: 56</div></div></a>
-          <a class="opt" href="menu.html">Menu</a>
+      <div class="menus">
+        <div class="menuTop p-4">
+          <div class="d-flex float-left position-absolute">
+          <div class="iconsMenu">
+            <a href="javascript:history.back()" class="back"><img src="https://img.icons8.com/ios-glyphs/60/null/circled-left-2.png"/></a>
+          </div>
+            <div class="iconsMenu p-2">
+              <a href="menu.html" class="menuNav ">Menu</a>
+            </div>
+            <div class="iconsMenu p-2">
+              <a href="pedidosAnteriores.html" class="menuNav active">Pedidos<br>Anteriores</a>
+            </div>
+          </div>
           
-          <a class="opt" href="">Pedidos Anteriores</a>
           
+          
+         
+          <h1 class="mb-0">Pedidos Anteriores</h1>
+        
         </div>
-        <div class="menus">
-          <h1>Pedidos Anteriores</h1>
-          <hr>
-          <table>
-            <tr>
-              <th>Pedido</th>
-              <th>Data</th>
-              <th></th>
-            </tr>
-            <tr>
-              <td id="pedidoanterior1">Menu Bitoque, Sumo de Laranja, Mousse de chocolate</td>
-              <td>12/03/2022</td>
-              <td><button class="btn mx-2 bg1 text-white" onclick="repetirPedido()">Repetir</button><button class="btn mx-2 bg1 text-white" data-toggle="modal" data-target="#avaliar">Avaliar</button><button class="btn mx-2 bg1 text-white">Fatura</button></td>
-            </tr>
-            <tr>
-              <td>Menu Strogonoff, Cerveja, Pudim</td>
-              <td>10/03/2022</td>
-              <td><button class="btn mx-2 bg1 text-white">Repetir</button><button class="btn mx-2 bg1 text-white" >Avaliar</button><button class="btn mx-2 bg1 text-white">Fatura</button></td>
-            </tr>
-            <tr>
-              <td>Strogonoff, Água</td>
-              <td>04/03/2022</td>
-              <td><button class="btn mx-2 bg1 text-white">Repetir</button><button class="btn mx-2 bg1 text-white">Avaliar</button><button class="btn mx-2 bg1 text-white">Fatura</button></td>
-            </tr>
-            
-          </table>
+          
+          <hr class="mt-0">
+          <div class="p-4">
+            <table>
+              <tr>
+                <th>Pedido</th>
+                <th>Data</th>
+                <th></th>
+              </tr>
+              <tr>
+                <td id="pedidoanterior1">Menu Bitoque, Sumo de Laranja, Mousse de chocolate</td>
+                <td>12/03/2022</td>
+                <td><button class="btn mx-2 bg1 text-white" onclick="repetirPedido()">Repetir</button><button class="btn mx-2 bg1 text-white" data-toggle="modal" data-target="#avaliar">Avaliar</button><button onclick="window.open('fatura.pdf', '_blank');" class="btn mx-2 bg1 text-white">Fatura</button></td>
+              </tr>
+              
+            </table>
+          </div>
+          
           
         </div>
         <div class="modal fade" id="avaliar" tabindex="-1" role="dialog" aria-hidden="true">
-          <div class="modal-dialog" role="document">
+          <div class="modal-dialog modal-dialog2" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Avalair</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Avaliar</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="p-4">
-             
-                <button data-toggle="modal" data-target="#avaliar">1 estrela</button>
+                <span id="star1" onmouseenter="starHover(this)" onmouseleave="starLeftHover(this)" onclick="avaliar()" class="fa fa-2x fa-star"></span>
+                <span id="star2" onmouseenter="starHover(this)" onmouseleave="starLeftHover(this)" onclick="avaliar()" class="fa fa-2x fa-star"></span>
+                <span id="star3" onmouseenter="starHover(this)" onmouseleave="starLeftHover(this)" onclick="avaliar()" class="fa fa-2x fa-star"></span>
+                <span id="star4" onmouseenter="starHover(this)" onmouseleave="starLeftHover(this)" onclick="avaliar()" class="fa fa-2x fa-star"></span>
+                <span id="star5" onmouseenter="starHover(this)" onmouseleave="starLeftHover(this)" onclick="avaliar()" class="fa fa-2x fa-star"></span>
+                <!-- <button data-toggle="modal" onclick="avaliar()" data-target="#avaliar">1 estrela</button>
               
-                <button data-toggle="modal" data-target="#avaliar">2 estrelas</button>
+                <button data-toggle="modal" onclick="avaliar()" data-target="#avaliar">2 estrelas</button>
               
-                <button data-toggle="modal" data-target="#avaliar">3 estrelas</button>
+                <button data-toggle="modal" onclick="avaliar()" data-target="#avaliar">3 estrelas</button>
               
-                <button data-toggle="modal" data-target="#avaliar">4 estrelas</button>
+                <button data-toggle="modal" onclick="avaliar()" data-target="#avaliar">4 estrelas</button>
               
-                <button data-toggle="modal" data-target="#avaliar">5 estrelas</button>
+                <button data-toggle="modal" onclick="avaliar()" data-target="#avaliar">5 estrelas</button> -->
               </div>
               <p style="margin-bottom:1cm;"></p>
               </div>
@@ -76,6 +85,7 @@
               </div>
             </div>
           </div>
+          <div id="mensagemRapida"></div>
           <div class="modal fade text-left" id="pedidoAtual" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog2 modal-dialog" role="document">
               <div class="modal-content">
@@ -89,9 +99,9 @@
                 <div id="pedidoDaAtualidade">
                   <button type="button" disabled="true" id="btnMenuRetroceder" class="btn btn-secondary">Avaliar</button>
                 </div>
-                <p style="margin-bottom:1cm;"></p>
                 </div>
                 <div class="modal-footer d-block text-center mx-2">
+                  <div id="total" class="mb-2 font-weight-bold"></div>
                   <button type="button" onclick="location.href='pedidoEfetuado.html'"  class="btn btn-secondary">Efetuar pedido</button>
                   <button type="button" onclick="location.href='pagamento.html'"  class="btn btn-primary">Pagamento</button>
                 </div>
@@ -114,5 +124,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="./js/script.js"></script>
+    <script src="./js/menu.js"></script>
   </body>
 </html>

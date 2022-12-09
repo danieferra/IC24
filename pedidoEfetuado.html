@@ -9,17 +9,19 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
-  <body>
+  <body class="flex-column">
     <div class="main text-center p-5">
         <h1 class="mb-5">A sua comida está a caminho!</h1>
-        <p>Pode adicionar o spratos que desejar ao seu pedido e pagar no final.</p>
+        <p>Pode adicionar os pratos que desejar ao seu pedido e pagar no final.</p>
         <div class="d-flex">
           <button type="button" onclick="location.href='menu.html'" class="btn mx-2 bg1 text-white">Adicionar prato</button>
-          <button type="button" onclick="location.href='index.html'" class="btn mx-2 bg1 text-white">Concluido</button>
+          <button type="button" onclick="location.href='pagamento.html'" class="btn mx-2 bg1 text-white">Pagar</button>
         </div>
     </div>
 
-    <button id="clearStorageBtn" onclick="limpaStorage()" class="btn btn-secondary">Clean local storage</button>
+    <button id="clearStorageBtn" onclick="limpaStorage()" class="btn btn-secondary mt-2">Clean local storage</button>
+
+    
 
     <div class="modal fade" id="pedidoAtual" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
