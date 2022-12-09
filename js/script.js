@@ -127,7 +127,7 @@ function pedidoAtual(){
             let ns =Math.floor(Math.random()*20 )+1;
             
             if(!(texto.includes(">"+elem+"<"))){
-                texto+="<div class='card d-block p-2 mb-2 font-weight-bold'><div style='float: left;margin-right: 5px;'><button class='menos' onclick=retirarDoMenu('btns"+btns+"',1); id='btns"+btns+"' data-target='"+elem+"'>-</button><input type='text' min='1' value='"+counts[elem]+"' onKeyDown='return false' class='quantidade' disabled><button class='mais' onclick=adicionarDoMenu('btnsa"+btns+"',1) id='btnsa"+btns+"' data-target='"+elem+"'>+</button> </div><div class='d-flex w-auto justify-content-between'>"+elem+"<span class=' text-right d-flex flex-column font-weight-normal'>"+new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format((parseFloat(item.preco.replace(',','.'))*counts[elem]))+"<span class='remove' onclick=retirarDoMenu('btns"+btns+"',"+counts[elem]+")>Remover</span></span></div><p class='small mb-0'>Tempo de espera: "+ns.toString()+"min</p></div>";
+                texto+="<div class='card d-block p-2 mb-2 font-weight-bold'><div style='float: left;margin-right: 5px;'><button class='menos' onclick=retirarDoMenu('btns"+btns+"',1,false); id='btns"+btns+"' data-target='"+elem+"'>-</button><input type='text' min='1' value='"+counts[elem]+"' onKeyDown='return false' class='quantidade' disabled><button class='mais' onclick=adicionarDoMenu('btnsa"+btns+"',1) id='btnsa"+btns+"' data-target='"+elem+"'>+</button> </div><div class='d-flex w-auto justify-content-between'>"+elem+"<span class=' text-right d-flex flex-column font-weight-normal'>"+new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format((parseFloat(item.preco.replace(',','.'))*counts[elem]))+"<span class='remove' onclick=confirmarRetirar("+btns+","+counts[elem]+")>Remover</span></span></div><p class='small mb-0'>Tempo de espera: "+ns.toString()+"min</p></div>";
                 btns++;
             }
             
@@ -138,13 +138,37 @@ function pedidoAtual(){
     }
 }
 
-function retirarDoMenu(valor,vezes){
+function retirarDoMenu(valor,vezes,remover){
+    pedido = JSON.parse(localStorage.getItem('pedido'));
+    pedido.sort();
+    const counts = {};
+        
+    pedido.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
     let x = document.getElementById(valor).dataset.target;
-    x = x.split(",");
-    for(let y=0;y<vezes;y++){
-        removeItem(x);
+    if(counts[x]>1||remover==true){
+        x = x.split(",");
+        for(let y=0;y<vezes;y++){
+            removeItem(x);
+        }
+        pedidoAtual();
     }
-    pedidoAtual();
+    document.getElementById("mensagemRapida").style.display="none";
+    document.getElementById("pedidoAtual").style="padding-right: 14px;display: block;";
+    
+}
+
+function confirmarRetirar(btns,vezes){
+    document.getElementById("mensagemRapida").style.display="flex";
+    setTimeout( function() { document.getElementById("mensagemRapida").style.opacity="1";}, 100);
+    document.getElementById("mensagemRapida").innerHTML="<p class='font-weight-bold'>Tem a certeza que pretente remover este item do menu?</p><div><button class='btn btn-secondary mx-2 border-0'onclick='cancelarRetirar()' >Cancelar</button><button onclick=retirarDoMenu('btns"+btns+"',"+vezes+",true) class='btn btn-primary border-0 bg-danger mx-2'>Remover</button></div>";
+    document.getElementById("pedidoAtual").style="filter: brightness(0.5) blur(1px);padding-right: 14px;display: block;";
+}
+
+function cancelarRetirar(){
+    
+    setTimeout( function() { document.getElementById("mensagemRapida").style.opacity="0";}, 100);
+    document.getElementById("mensagemRapida").style.display="none";
+    document.getElementById("pedidoAtual").style="padding-right: 14px;display: block;";
 }
 
 function adicionarDoMenu(valor){

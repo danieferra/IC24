@@ -332,6 +332,7 @@ input[type=checkbox]{
     transition: 500ms;
     padding: 20px;
     opacity: 0;
+    z-index: 1500;
 }
 #mensagemRapida .verified{
     height: 60px;
@@ -480,6 +481,12 @@ input[type=checkbox]{
     margin-left: auto;
     margin-right: auto;
 }
+#seq-menu4 .card{
+    cursor: default;
+}
+#seq-menu4 .card:hover{
+    border: 1px solid rgba(0,0,0,.125);
+}
 .sequenciaMenu{
     width: 35px;
     height: 35px;
@@ -536,4 +543,13 @@ input[type=checkbox]{
 #pagamentoConta .iniciais img{
     height: 60px;
     width: 60px;
+}
+
+.highlight {
+    border: 2px solid rgb(227, 108, 108);
+}
+
+#numeroNotificacao {
+    color: rgb(195, 0, 0);
+    font-size: small;
 }

@@ -16,6 +16,15 @@
         <form method="get" action="">
           <div class="d-flex">
             <div class="iniciais">
+              <img src="img/user.png" alt=""/>
+              <input type="text" required placeholder="Nome" required id="nomeReservaId" class="m-2 w-75">
+          </div>
+            <div class="iniciais">
+              <img src="img/phone.png" alt=""/>
+              <input type="number" required placeholder="Telemóvel" id="numeroReservaId" class="m-2 w-75" pattern="[0-9]{9}" max="999999999">
+              <a id="numeroNotificacao" style="display:none">Numero incorreto</a>
+          </div>
+            <div class="iniciais">
                 <img src="img/calendar-icon.svg" alt=""/>
                 <input type="date" required id="dataReservaId" class="m-2" min="22/11/2022">
             </div>
