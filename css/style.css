@@ -226,19 +226,19 @@ tr:nth-child(even) {
     filter: invert();
 }
 #numPedido{
-    background-color: rgb(153, 5, 5);
+    background-color: gainsboro;
     position: absolute;
     padding: 5px;
     border-radius: 50%;
     height: 20px;
     line-height: 1;
     width: 20px;
-    top: 0;
+    bottom: 0;
     right: 0;
     font-weight: bold;
     font-size: x-small;
     transition: 500ms;
-    color:white;
+    color:212529;
 }
 #menusCompletos .card{
     cursor: pointer;
@@ -565,9 +565,10 @@ input[type=checkbox]{
 #numeroNotificacao {
     color: rgb(195, 0, 0);
     font-size: small;
+    position: absolute;
+    bottom: 10px;
+    
 }
-<<<<<<< HEAD
-=======
 
 .helpIcon {
     position:absolute;
@@ -577,7 +578,6 @@ input[type=checkbox]{
 
 .iconHelp {
     position:absolute;
-    top: 110px;
-    right: 350px;
+    top: 28px;
+    right: 24px;
 }
->>>>>>> e24b451911b58010b00219dfea11df4acd2ff1a4

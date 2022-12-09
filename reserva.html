@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body class="flex-column">
-    <div class="iconHelp">
-      <a href="help.html" class="help"><img src="img/help.svg"></a>
-    </div>
-    <div class="main text-center">
+    
+    <div class="main text-center position-relative">
+      <div class="helpIcon">
+        <a href="help.html" class="help"><img src="img/help.svg"></a>
+      </div>
       <h1>Reservar Mesa</h1>
       <hr>
       <form method="get" action="">
@@ -22,17 +23,10 @@
             <img src="img/user.png" alt=""/>
             <input type="text" required placeholder="Nome" required id="nomeReservaId" class="m-2 w-75">
           </div>
-<<<<<<< HEAD
-            <div class="iniciais">
-              <img src="img/phone.png" alt=""/>
-              <input type="number" required placeholder="Telemóvel" id="numeroReservaId" class="m-2 w-75" pattern="[0-9]{9}" max="999999999">
-              <a id="numeroNotificacao" class="small" style="display:none">Formato de número incorreto</a>
-=======
-          <div class="iniciais">
+          <div class="iniciais position-relative">
             <img src="img/phone.png" alt=""/>
             <input type="number" required placeholder="Telemóvel" id="numeroReservaId" class="m-2 w-75" pattern="[0-9]{9}" max="999999999">
-            <a id="numeroNotificacao" style="display:none">Numero incorreto</a>
->>>>>>> e24b451911b58010b00219dfea11df4acd2ff1a4
+            <a id="numeroNotificacao" class="small" style="display: none;">Formato de número incorreto</a>
           </div>
           <div class="iniciais">
             <img src="img/calendar-icon.svg" alt=""/>
@@ -53,24 +47,15 @@
             <img src="img/clock-icon.svg" alt=""/>
             <input type="time" required id="horaReserva" class="m-2" min="">
           </div>
-          
-        </form>
-        <div class="mt-4"><a href="index.html" class="btn text-white mx-2 bg1">Cancelar</a><button type="button" class="btn mx-2 text-white bg1" id="reservaBtn" onclick="reserva()" disabled>Reservar</button></div>
-
-        <div id="reservaNotificacao">
-          <h1>Reserva efetuada com sucesso!</h1>
-          <p>Nome: <a id="nomeReservaId2"></a></p>
-          <p>Telemóvel: <a id="numeroReservaId2"></a></p>
-          <p>Data: <a id="dataReserva"></a></p>
-          <p>Numero de pessoas: <a id="numPessoasShow"></a></p>
-          <p>Hora: <a id="horaReservaShow"></a></p>
-          <div>
-            <a href="index.html" class="btn text-white mt-2 bg1">Concluir</a>
-            <a href="menu.html" class="btn text-white mt-2 bg1">Pedir já</a>
-          </div>
+        </div>    
+      </form>
+        <div class="mt-4">
+          <a href="index.html" class="btn text-white mx-2 bg1">Cancelar</a><button type="button" class="btn mx-2 text-white bg1" id="reservaBtn" onclick="reserva()" disabled>Reservar</button>
         </div>
           <div id="reservaNotificacao">
             <h1>Reserva efetuada com sucesso!</h1>
+            <p>Nome: <a id="nomeReservaId2"></a></p>
+            <p>Telemóvel: <a id="numeroReservaId2"></a></p>
             <p>Data: <a id="dataReserva"></a></p>
             <p>Numero de pessoas: <a id="numPessoasShow"></a></p>
             <p>Hora: <a id="horaReservaShow"></a></p>

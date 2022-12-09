@@ -15,7 +15,7 @@ function checkForm() {
         document.getElementById('numeroReservaId').classList.remove('highlight');
         document.getElementById('numeroNotificacao').style.display = "none";
     }
-    else if (!(/^([0-9]{9})$/.test(numeroReserva))) {
+    else if (!(/^([0-9]{9})$/.test(numeroReserva))&& numeroReserva!="") {
         document.getElementById('numeroReservaId').classList.add('highlight');
         document.getElementById('numeroNotificacao').style.display = "flex";
         document.getElementById("reservaBtn").disabled = true;

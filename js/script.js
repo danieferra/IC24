@@ -142,6 +142,7 @@ function retirarDoMenu(valor,vezes,remover){
     pedido = JSON.parse(localStorage.getItem('pedido'));
     pedido.sort();
     const counts = {};
+    
         
     pedido.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
     let x = document.getElementById(valor).dataset.target;
@@ -151,6 +152,7 @@ function retirarDoMenu(valor,vezes,remover){
             removeItem(x);
         }
         pedidoAtual();
+        lengthPedido();
     }
     document.getElementById("mensagemRapida").style.display="none";
     document.getElementById("pedidoAtual").style="padding-right: 14px;display: block;";
@@ -176,6 +178,7 @@ function adicionarDoMenu(valor){
     x = x.split(",");
     addItem(x);
     pedidoAtual();
+    lengthPedido();
 }
 
 function removeItem(item){
@@ -251,6 +254,9 @@ function filtros(){
         todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#bebidas .col-3")));
         todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#sobremesas .col-3")));
         todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#seq-menu3 .col-2")));
+        todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#seq-menu2 .col-2")));
+
+        
 
         for(const elem of todos){
             elem.style.display="none";
@@ -276,28 +282,14 @@ function filtros(){
         selecionados = Array.prototype.slice.call(document.querySelectorAll("#bebidas "+classes));
         selecionados = selecionados.concat(Array.prototype.slice.call(document.querySelectorAll("#sobremesas "+classes)));
         selecionados = selecionados.concat(Array.prototype.slice.call(document.querySelectorAll("#seq-menu3 "+classes)));
+        selecionados = selecionados.concat(Array.prototype.slice.call(document.querySelectorAll("#seq-menu2 "+classes)));
         for(const elem of selecionados){
             
             elem.style.display="block";
         }
     }
 
-   /*  filtro = Array.prototype.slice.call(document.getElementsByClassName("categoria"));
-    todos = Array.prototype.slice.call(document.querySelectorAll("#menusCompletos .col-3"));
-    todos = todos.concat(Array.prototype.slice.call(document.querySelectorAll("#pratos .col-3")));
-    classes = "";
-    for(const elem of filtro){
-        if(elem.checked==true){
-            for(const item of todos){
-                if(item.classList.contains(elem.value)){
-                    item.style.display="block";
-                }
-                else{
-                    item.style.disaplay="none";
-                }
-            }
-        }
-    } */
+
    
     
     
