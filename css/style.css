@@ -115,6 +115,15 @@ body{
 .back img:hover{
     filter: invert(22%) sepia(51%) saturate(4517%) hue-rotate(118deg) brightness(94%) contrast(105%);
 }
+
+.help img{
+    height: 40px;
+    transition: 500ms;
+}
+.help img:hover{
+    filter: invert(22%) sepia(51%) saturate(4517%) hue-rotate(118deg) brightness(94%) contrast(105%);
+}
+
 .modal-dialog{
     height: 700px;
     max-width: 900px!important;
@@ -217,18 +226,19 @@ tr:nth-child(even) {
     filter: invert();
 }
 #numPedido{
-    background-color: rgb(214, 214, 214);
+    background-color: rgb(153, 5, 5);
     position: absolute;
     padding: 5px;
     border-radius: 50%;
     height: 20px;
     line-height: 1;
     width: 20px;
-    bottom: 0;
+    top: 0;
     right: 0;
     font-weight: bold;
     font-size: x-small;
     transition: 500ms;
+    color:white;
 }
 #menusCompletos .card{
     cursor: pointer;
@@ -508,6 +518,8 @@ input[type=checkbox]{
     align-items: center;
     line-height: 1;
 }
+
+
 .iconsMenu img{
     height: 40px;
     width: 40px;
@@ -554,3 +566,18 @@ input[type=checkbox]{
     color: rgb(195, 0, 0);
     font-size: small;
 }
+<<<<<<< HEAD
+=======
+
+.helpIcon {
+    position:absolute;
+    top: 28px;
+    right: 24px;
+}
+
+.iconHelp {
+    position:absolute;
+    top: 110px;
+    right: 350px;
+}
+>>>>>>> e24b451911b58010b00219dfea11df4acd2ff1a4
