@@ -156,6 +156,7 @@ tr:nth-child(even) {
     position: absolute;
     background-color: white;
     padding: 10%;
+    width: 1200px;
 }
 
 /* width */

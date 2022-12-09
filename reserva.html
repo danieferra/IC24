@@ -22,7 +22,7 @@
             <div class="iniciais">
               <img src="img/phone.png" alt=""/>
               <input type="number" required placeholder="Telemóvel" id="numeroReservaId" class="m-2 w-75" pattern="[0-9]{9}" max="999999999">
-              <a id="numeroNotificacao" style="display:none">Numero incorreto</a>
+              <a id="numeroNotificacao" class="small" style="display:none">Formato de número incorreto</a>
           </div>
             <div class="iniciais">
                 <img src="img/calendar-icon.svg" alt=""/>
@@ -48,6 +48,8 @@
 
         <div id="reservaNotificacao">
           <h1>Reserva efetuada com sucesso!</h1>
+          <p>Nome: <a id="nomeReservaId2"></a></p>
+          <p>Telemóvel: <a id="numeroReservaId2"></a></p>
           <p>Data: <a id="dataReserva"></a></p>
           <p>Numero de pessoas: <a id="numPessoasShow"></a></p>
           <p>Hora: <a id="horaReservaShow"></a></p>
