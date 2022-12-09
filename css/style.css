@@ -236,6 +236,13 @@ tr:nth-child(even) {
 #menusCompletos .card:hover{
     border-color: rgb(29, 46, 29);
 }
+#pedirMenu .card{
+    cursor: pointer;
+    transition: 500ms;
+}
+#pedirMenu .card:hover{
+    border-color: rgb(29, 46, 29);
+}
 
 #pratos .card{
     cursor: pointer;

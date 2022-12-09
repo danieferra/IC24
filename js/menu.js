@@ -298,7 +298,7 @@ function pedidoMenu(num,cat,nomeCat){
   //Bebidas
   var html = "";
   for(let x=0;x<bebidas.length;x++){
-    html+="<div class='col-2 my-2 "+filtroJS(bebidas[x].filtros)+"'> <div class='card h-100'> <div class='card-body'> <div class='card-img mb-4'><img src="+bebidas[x].imagem+" title="+bebidas[x].nome+" alt="+bebidas[x].nome+"></div> <h5 class='card-title'>"+bebidas[x].nome+"</h5>  </div> </div> </div>";
+    html+="<div class='col-2 my-2 "+filtroJS(bebidas[x].filtros)+"'> <div class='card h-100'> <div class='card-body'> <div class='card-img mb-4'><img src="+bebidas[x].imagem+" title='"+bebidas[x].nome+"' alt='"+bebidas[x].nome+"'></div> <h5 class='card-title'>"+bebidas[x].nome+"</h5>  </div> </div> </div>";
   }
   html+="<div class='col-2 my-2'><div class='card h-100'><div class='card-body'><div class='card-img mb-4'><img src='https://img.icons8.com/external-prettycons-lineal-prettycons/98/null/external-forbidden-essentials-prettycons-lineal-prettycons.png'/></div><h5 class='card-title'>Sem Bebida</h5><p class='card-text'></p></div></div></div>";
   document.querySelector("#seq-menu2 .row").innerHTML = html;
@@ -306,7 +306,7 @@ function pedidoMenu(num,cat,nomeCat){
   //Sobremesas
   var html = "";
   for(let x=0;x<sobremesas.length;x++){
-    html+="<div class='col-2 my-2 "+filtroJS(sobremesas[x].filtros)+"'> <div class='card h-100'> <div class='card-body'> <div class='card-img'><img src="+sobremesas[x].imagem+" title="+sobremesas[x].nome+" alt="+sobremesas[x].nome+"></div> <h5 class='card-title'>"+sobremesas[x].nome+"</h5>  </div> </div> </div>";
+    html+="<div class='col-2 my-2 "+filtroJS(sobremesas[x].filtros)+"'> <div class='card h-100'> <div class='card-body'> <div class='card-img'><img src="+sobremesas[x].imagem+" title='"+sobremesas[x].nome+"' alt='"+sobremesas[x].nome+"'></div> <h5 class='card-title'>"+sobremesas[x].nome+"</h5>  </div> </div> </div>";
   }
   html+="<div class='col-2 my-2'><div class='card h-100'><div class='card-body'><div class='card-img mb-4'><img src='https://img.icons8.com/external-prettycons-lineal-prettycons/98/null/external-forbidden-essentials-prettycons-lineal-prettycons.png'/></div><h5 class='card-title'>Sem Sobremesa</h5><p class='card-text'></p></div></div></div>";
   document.querySelector("#seq-menu3 .row").innerHTML = html;
