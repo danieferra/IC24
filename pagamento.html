@@ -9,16 +9,14 @@
 <body>
   <div class="main d-block text-center p-5 position-relative">
     
-    <h1 class="contaTitulo mb-5">Métodos de pagamentos</h1>
+    <h1 class="contaTitulo mb-5">Processo de pagamento</h1>
     <a href="javascript:history.back()" class="mb-5" style="position: absolute; left:15px;top:15px;"><img src="https://img.icons8.com/ios-glyphs/60/null/circled-left-2.png"/></a>
     
     <div class="text-center p-5">
-      <div class="d-flex" id="">
-          <a href="pagamentoConcluido.html" class="iniciais"><img src="img/banknotes.png"/>Numerário</a>
-          <a href="pagamentoConcluido.html" class="iniciais"><img src="img/bank-card-back-side.png"/>Multibanco</a>
-          <a href="pagamentoConcluido.html" class="iniciais"><img src="img/touchscreen-smartphone.png"/>MBWay</a>       
-          <a href="pagamentoConcluido.html" class="iniciais"><img src="img/wash-your-hands--v7.png"/>Lavar a Loiça</a>
+      <div class="d-flex justify-content-center" id="">
+        <button onclick="pagamentoCompleto();" class="iniciais"><img src="https://img.icons8.com/dotty/80/null/money.png"/>Pagamento completo</button>
           <button class="iniciais" onclick="totalConta();"><img src="img/split-money.png"/>Dividir a Conta</button>
+          
     </div>
     <div class="pt-4 text-center d-block">
       
@@ -38,13 +36,19 @@
           <p>Dividir conta por:</p>
           <div class="justify-content-center d-flex">
             <button class='menos h-auto' type="button" onclick='menosPessoas()'>-</button>
-                <div id="numPessoas" onchange="divisao();">1</div>
+                <div id="numPessoas" onchange="divisao();">2</div>
                 <!-- <input type="text" onkeypress="return false" required id="numPessoas" value="1" class="m-2 quantidade"> -->
                 <button class='mais h-auto' type="button" onclick='maisPessoas()'>+</button>
           </div>
           <br>
           <p id="cadaUm"></p>
-          <button type="button" onclick="location.href='pagamentoConcluido.html'" class="btn mx-2 bg1 text-white">Concluir pagamento</button>
+          <div class="d-flex justify-content-center">
+            <a href="pagamentoConcluido.html" class="iniciais"><img src="img/banknotes.png"/>Numerário</a>
+          <a href="pagamentoConcluido.html" class="iniciais"><img src="img/bank-card-back-side.png"/>Multibanco</a>
+          <a href="pagamentoConcluido.html" class="iniciais"><img src="img/touchscreen-smartphone.png"/>MBWay</a>       
+          <a href="pagamentoConcluido.html" class="iniciais"><img src="img/wash-your-hands--v7.png"/>Lavar a Loiça</a>
+          </div>
+          <!-- <button type="button" onclick="location.href='pagamentoConcluido.html'" class="btn mx-2 bg1 text-white">Concluir pagamento</button> -->
         </div>
         <p style="margin-bottom:1cm;"></p>
         </div>
@@ -52,6 +56,31 @@
         </div>
       </div>
     </div>
+    <div class="modal fade" id="pagamentoConta" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog2" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Pagamento Completo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="p-4">
+            <p class="font-weight-bold" id="totalConta2"></p>
+            <div class="d-flex justify-content-center">
+              <a href="pagamentoConcluido.html" class="iniciais"><img src="img/banknotes.png"/>Numerário</a>
+            <a href="pagamentoConcluido.html" class="iniciais"><img src="img/bank-card-back-side.png"/>Multibanco</a>
+            <a href="pagamentoConcluido.html" class="iniciais"><img src="img/touchscreen-smartphone.png"/>MBWay</a>       
+            <a href="pagamentoConcluido.html" class="iniciais"><img src="img/wash-your-hands--v7.png"/>Lavar a Loiça</a>
+            </div>
+            <!-- <button type="button" onclick="location.href='pagamentoConcluido.html'" class="btn mx-2 bg1 text-white">Concluir pagamento</button> -->
+          </div>
+          <p style="margin-bottom:1cm;"></p>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
   </div>
 </body>
 

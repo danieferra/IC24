@@ -2,7 +2,12 @@ function changeMenu(place) {
     document.getElementsByClassName("nav-link active")[0].classList.remove("active");
     btn = document.getElementById('nav'+place);
     texto= btn.innerHTML;
-    
+    if(place=='menusCompletos'||place=='pratos'){
+        document.getElementById("catsGorias").style.display="block";
+    }
+    else{
+        document.getElementById("catsGorias").style.display="none";
+    }
     btn.classList.add("active");
     zonas = document.getElementsByClassName("container menut");
     Array.from(zonas).forEach(function(elem) {

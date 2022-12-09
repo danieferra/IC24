@@ -239,6 +239,7 @@ function totalConta(){
             
             total = Math.ceil(total*100)/100;
             document.getElementById("totalConta").innerHTML="Total: "+new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(total);
+            document.getElementById("totalConta2").innerHTML="Total: "+new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(total);
             divisao();
         }
         
@@ -250,7 +251,7 @@ document.getElementById("numPessoas").addEventListener("change", divisao);
 function menosPessoas(){
     n = parseInt(document.getElementById("numPessoas").innerHTML);
     n--;
-    if(n>=1){
+    if(n>1){
         document.getElementById("numPessoas").innerHTML=n;
     }
     divisao();
@@ -266,4 +267,8 @@ function maisPessoas(){
 function divisao(){
     num = document.getElementById("numPessoas").innerText;
     document.getElementById("cadaUm").innerHTML="Cada um paga: "+new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format((total/num));
+}
+
+function pagamentoCompleto(){
+  $('#pagamentoConta').modal('show');
 }

@@ -232,6 +232,7 @@ tr:nth-child(even) {
 #menusCompletos .card{
     cursor: pointer;
     transition: 500ms;
+    box-shadow: 0 10px 30px 0 rgb(0 0 0 / 5%);
 }
 #menusCompletos .card:hover{
     border-color: rgb(29, 46, 29);
@@ -239,6 +240,7 @@ tr:nth-child(even) {
 #pedirMenu .card{
     cursor: pointer;
     transition: 500ms;
+    box-shadow: 0 10px 30px 0 rgb(0 0 0 / 5%);
 }
 #pedirMenu .card:hover{
     border-color: rgb(29, 46, 29);
@@ -247,6 +249,7 @@ tr:nth-child(even) {
 #pratos .card{
     cursor: pointer;
     transition: 500ms;
+    box-shadow: 0 10px 30px 0 rgb(0 0 0 / 5%);
 }
 #pratos .card:hover{
     border-color: rgb(29, 46, 29);
@@ -255,6 +258,7 @@ tr:nth-child(even) {
 #bebidas .card{
     cursor: pointer;
     transition: 500ms;
+    box-shadow: 0 10px 30px 0 rgb(0 0 0 / 5%);
 }
 #bebidas .card:hover{
     border-color: rgb(29, 46, 29);
@@ -263,6 +267,7 @@ tr:nth-child(even) {
 #sobremesas .card{
     cursor: pointer;
     transition: 500ms;
+    box-shadow: 0 10px 30px 0 rgb(0 0 0 / 5%);
 }
 #sobremesas .card:hover{
     border-color: rgb(29, 46, 29);
@@ -364,8 +369,18 @@ input[type=checkbox]{
     position: absolute;
     left: 50%;
     margin: 0;
-    width: 600px;
+    width: 700px;
     height: 600px;
+    transform: translate(-50%, -50%);
+
+}
+#pagamentoConta .modal-dialog2{
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    margin: 0;
+    width: 700px;
+    height: 300px;
     transform: translate(-50%, -50%);
 
 }
@@ -505,4 +520,20 @@ input[type=checkbox]{
 .remove{
     text-decoration: underline;
     cursor: pointer;
+}
+#dividirConta .iniciais{
+    width: 150px;
+    height: 150px;
+}
+#dividirConta .iniciais img{
+    height: 60px;
+    width: 60px;
+}
+#pagamentoConta .iniciais{
+    width: 150px;
+    height: 150px;
+}
+#pagamentoConta .iniciais img{
+    height: 60px;
+    width: 60px;
 }

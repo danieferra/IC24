@@ -36,8 +36,8 @@
           
           <hr class="mt-0">
           <div class="row">
-            <div class="col-2"></div>
-            <div class="col-10">
+            <!-- <div class="col-2"></div> -->
+            <div class="col-12">
               <nav class="nav">
                 <li class="nav-item">
                   <a class="nav-link active" id="navmenusCompletos" href="#" onclick="changeMenu('menusCompletos')">Menus Completos</a>
@@ -58,30 +58,36 @@
           <div class="px-4">
             <div class="row">
               <div class="col-2">
-                Categorias:
-                <ul class="list-group categorias mb-4 text-left">
-                  <li class="list-group-item">
-                    
-                    <label for="carne" class="m-0 d-flex align-items-center"><input id="carne" class="mr-2 categoria"  onchange="filtros()" type="checkbox" value="carne" aria-label="Carne"><div>Carne</div><img src="./img/icons8-barbecue-50.png" alt=""></label>
-                  </li>
-                  <li class="list-group-item">
-                    <label for="peixe" class="m-0 d-flex align-items-center"><input id="peixe" class="mr-2 categoria"  onchange="filtros()" type="checkbox" value="peixe" aria-label="Peixe"><div>Peixe</div><img src="./img/icons8-fish-food-60.png" alt=""></label>
-                  </li>
-                  <li class="list-group-item">
-                    <label for="vegan" class="m-0 d-flex align-items-center"><input id="vegan" class="mr-2 categoria"  onchange="filtros()" type="checkbox" value="vegan" aria-label="Vegan"><div>Vegan</div><img src="./img/icons8-vegan-food-50.png" alt=""></label>
-                  </li>
-                </ul>
-                Filtros:
-                <ul class="list-group">
-                  <li class="list-group-item">
-                    <input id="semgluten" class="form-check-input me-1"  onchange="filtros()" type="checkbox" value="sgluten" aria-label="Sem Glúten">
-                    <label for="semgluten" class="m-0">Sem Glúten</label>
-                  </li>
-                  <li class="list-group-item">
-                    <input id="semlactose" class="form-check-input me-1"  onchange="filtros()" type="checkbox" value="slactose" aria-label="Sem Lactose">
-                    <label for="semlactose" class="m-0">Sem Lactose</label>
-                  </li>
-                </ul>
+                <div id="catsGorias">
+                    Categorias:
+                  <ul class="list-group categorias mb-4 text-left">
+                    <li class="list-group-item">
+                      
+                      <label for="carne" class="m-0 d-flex align-items-center"><input id="carne" class="mr-2 categoria"  onchange="filtros()" type="checkbox" value="carne" aria-label="Carne"><div>Carne</div><img src="./img/icons8-barbecue-50.png" alt=""></label>
+                    </li>
+                    <li class="list-group-item">
+                      <label for="peixe" class="m-0 d-flex align-items-center"><input id="peixe" class="mr-2 categoria"  onchange="filtros()" type="checkbox" value="peixe" aria-label="Peixe"><div>Peixe</div><img src="./img/icons8-fish-food-60.png" alt=""></label>
+                    </li>
+                    <li class="list-group-item">
+                      <label for="vegan" class="m-0 d-flex align-items-center"><input id="vegan" class="mr-2 categoria"  onchange="filtros()" type="checkbox" value="vegan" aria-label="Vegan"><div>Vegan</div><img src="./img/icons8-vegan-food-50.png" alt=""></label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="filtros0">
+                  Filtros:
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      <input id="semgluten" class="form-check-input me-1"  onchange="filtros()" type="checkbox" value="sgluten" aria-label="Sem Glúten">
+                      <label for="semgluten" class="m-0">Sem Glúten</label>
+                    </li>
+                    <li class="list-group-item">
+                      <input id="semlactose" class="form-check-input me-1"  onchange="filtros()" type="checkbox" value="slactose" aria-label="Sem Lactose">
+                      <label for="semlactose" class="m-0">Sem Lactose</label>
+                    </li>
+                  </ul>
+                </div>
+                
+                
               </div>
               <div class="col-10">
                 <div id="menusCompletos" class="container menut">
